@@ -1,23 +1,119 @@
-import logo from './logo.svg';
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import Places from './components/Places';
 import './App.css';
+import AddPlace from './components/Places/AddPlace';
+import DeletePlace from './components/Places/DeletePlace';
+import UpdatePlace from './components/Places/UpdatePlace';
+import User from './components/User';
+import DeleteUser from './components/User/DeleteUser';
+import UpdateUser from './components/User/UpdateUser';
+import Login from './components/Login';
+import Home from './components/Home';
+import AddReview from './components/Review/AddReview';
+import Review from './components/Review';
+import Nearby from './components/Nearby';
+import DeleteReview from './components/Review/DeleteReview';
+import UpdateReview from './components/Review/UpdateReview';
+import AddFavorite from './components/Favorite/AddFavorite';
+import RemoveFavorite from './components/Favorite/RemoveFavorite';
+
+
+
 
 function App() {
+
+  const navigate = useNavigate();
+
+  const [placeId, setPlaceId] = useState([]);
+
+  const setDeleteIdAndLink = (id) => {
+    setPlaceId(id)
+    navigate('/places/delete')
+  }
+  const setUpdateIdAndLink = (id) => {
+    setPlaceId(id)
+    navigate('/places/update')
+  }
+  const setReviewIdAndLink = (id) => {
+    setPlaceId(id)
+  navigate('/review/add')
+  }
+  const setFavoriteIdAndLink = (id) => {
+    setPlaceId(id)
+  navigate('/favorite/add')
+  }
+  const setRemoveFavoriteIdAndLink = (id) => {
+    setPlaceId(id)
+  navigate('/favorite/delete')
+  }
+
+  const [reviewId, setReviewId] = useState([]);
+
+  const setReviewDeleteIdAndLink = (id) => {
+    setReviewId(id)
+    navigate('/review/delete')
+  }
+  const setReviewUpdateIdAndLink = (id) => {
+    setReviewId(id)
+    navigate('/review/update')
+  }
+
+  const [userId, setUserId] = useState([]);
+
+  const setUserDeleteIdAndLink = (id) => {
+    setUserId(id)
+    navigate('/user/delete')
+  }
+
+  const setUserUpdateIdAndLink = (id) => {
+    setUserId(id)
+    navigate('/user/update')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/places" element={<Places 
+          setDeleteId={setDeleteIdAndLink}
+          setUpdateId={setUpdateIdAndLink}
+          setReviewId={setReviewIdAndLink}
+          setFavoriteId={setFavoriteIdAndLink}
+          />} />
+
+        <Route path="/places/add" element={<AddPlace />} />
+  
+        <Route path="/places/delete" element={<DeletePlace placeId={placeId} />} />
+        <Route path="/places/update" element={<UpdatePlace placeId={placeId} />} />
+
+        <Route path="/reviews/" element={<Review />} />
+        <Route path="/review/add" element={<AddReview placeId={placeId}/>} />
+        <Route path="/review/delete" element={<DeleteReview reviewId={reviewId}/>} />
+        <Route path="/review/update" element={<UpdateReview reviewId={reviewId}/>} />
+
+        <Route path="/favorite/add" element={<AddFavorite placeId={placeId} />} />
+        <Route path="/favorite/delete" element={<RemoveFavorite placeId={placeId} />} />
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/user" element={<User 
+          setDeleteId={setUserDeleteIdAndLink}
+          setUpdateId={setUserUpdateIdAndLink}
+          setReviewDeleteId={setReviewDeleteIdAndLink}
+          setEditReviewId={setReviewUpdateIdAndLink}
+          setFavDelId={setRemoveFavoriteIdAndLink}
+          />} />
+
+        <Route path="/user/delete" element={<DeleteUser userId={userId} />} />
+        <Route path="/user/update" element={<UpdateUser userId={userId} />} />
+
+
+        <Route path="/nearby" element={<Nearby />} />
+
+
+      </Routes>
     </div>
   );
 }
