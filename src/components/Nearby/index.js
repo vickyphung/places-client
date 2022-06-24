@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import NavBar from '../NavBar';
 import Container from 'react-bootstrap/Container';
 import FindPlace from './FindPlace';
@@ -7,6 +8,19 @@ import PlacePhoto from './PlacePhoto';
 
 
 const Nearby = (props) => {
+
+
+  const [lat, setLat] = useState([]);
+  const setLatAndLink = (lat) => {
+      setLat(lat)
+  }
+  
+  const [lon, setLon] = useState([]);
+  const setLonAndLink = (lon) => {
+      setLon(lon)
+  }
+
+
 
 
   return (
@@ -25,17 +39,6 @@ const Nearby = (props) => {
 export default Nearby;
 
 
-
-
-
-
-
-
-// Photo 
-// https://maps.googleapis.com/maps/api/place/photo
-//   ?maxwidth=400
-//   &photo_reference={}
-//   &key={}
 
 
 // Place Nearby with Lat/Lon, Radius, Type, and Keyword

@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 const TextSearch = (props) => {
 
     // const userId= "628b273367ddc3872a9271d0"
-    // const apiKey = "AIzaSyCelSI2-jX4D70RgWR6wtULBQJcnV9jFUE"
     const query = "arts%20and%20culture%20in%20alexandria,%20va"
 
   const [data, setData] = useState([]);
