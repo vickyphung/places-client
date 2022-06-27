@@ -33,7 +33,7 @@ function NavBar (){
                 </Nav.Item>
 
                 <Nav.Item>
-                    <Nav.Link href="/nearby">nearby</Nav.Link>
+                    <Nav.Link href="/search">search</Nav.Link>
                 </Nav.Item>
             </Nav>
         </div>

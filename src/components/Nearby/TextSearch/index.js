@@ -1,33 +1,53 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import NavBar from '../../NavBar';
-import Container from 'react-bootstrap/Container';
+import PlaceDetails from '../PlaceDetails';
 
 const TextSearch = (props) => {
 
-    // const userId= "628b273367ddc3872a9271d0"
-    const query = "arts%20and%20culture%20in%20alexandria,%20va"
+    const [results, setResults] = useState([]);
+    const [formData, setFormData] = useState('22312')
 
-  const [data, setData] = useState([]);
-    
-  useEffect(() => {
-      const getNearbyData = async () => {
-        const response = await axios.get(`http://localhost:8800/search/textSearch/${query}`       
-        );
+    const handleChange = (event) => {
+        setFormData(event.target.value)
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const response = await axios.get(`http://localhost:8800/search/textSearch/${formData}`)
         console.log(response);
-        setData(response.data);
-    };
-    getNearbyData();
-    }, [])
+        setResults(response.data.results);
+    }
 
   return (
     <div>
-        <Container>
-            <NavBar />
-            <h1>Text Search</h1>
-        </Container>
+      <h1>Text Search</h1>
+      <form className="searchForm" onSubmit={handleSubmit}>
+        <input
+          className="searchInput"
+          name="query"
+          id="query"
+          placeholder="arts and culture in alexandria, va"
+          onChange={handleChange}
+        />
+        <input className="submitBtn" type="submit" value="🔍" />
+      </form>
+      <hr></hr>
+      {console.log(results)}
+
+      <div>
+        {results?.map((result, index) => {
+          return (
+            <div className="searchResults" key={index}>
+              <h2>{result.name}</h2>
+              <h3>Location</h3>
+              <p>{result.formatted_address}</p>
+              <PlaceDetails detailsId={result.place_id} />
+            </div>
+          );
+        })}
+      </div>
     </div>
-  )
+  );
 }
 
 export default TextSearch;

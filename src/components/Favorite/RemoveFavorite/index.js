@@ -6,17 +6,17 @@ const RemoveFavorite = (props) => {
     console.log("Made it to the Delete Favorite Component")
     console.log(props.placeId)
 
-    const userId="628b273367ddc3872a9271d0"
+    // const userId = "62b5153a18a020243c4bb4a0";
 
     useEffect(()=>{
         const addFav = async () => {
             if (props.placeId) {
-                const response = await axios.put(`http://localhost:8800/user/favorite/remove/${userId}/${props.placeId}`)
+                const response = await axios.put(`http://localhost:8800/user/favorite/remove/${props.userId}/${props.placeId}`)
                 console.log(response)
             } 
        }
         addFav();
-    }, [props.placeId])
+    }, [props.placeId, props.userId])
 
     return (
         <div>

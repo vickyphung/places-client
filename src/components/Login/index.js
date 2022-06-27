@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import NavBar from '../NavBar';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
-  const navigate = useNavigate ();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -40,15 +39,13 @@ const Login = () => {
     });
     console.log(response);
     localStorage.setItem("jwtToken", response.data.jwtToken);
-    navigate ('/user')
+    navigate('/user')
   }
 
   return (
     <div>
-
-        <div><NavBar /></div>
         <h1>Create an Account!</h1>
-
+        <hr></hr>
           <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name:</label>
             <input name="name" id="name" onChange={handleChange} />
@@ -58,18 +55,14 @@ const Login = () => {
             <input type="submit" />
           </form>
 
-          <hr />
-
-
-      <h1>Log In!</h1>
-
-      <form onSubmit={handleLoginSubmit}>
-        <label htmlFor="loginName">Name:</label>
-        <input name="loginName" id="loginName" onChange={handleChangeLogin} />
-        <label htmlFor="loginPassword">Password:</label>
-        <input type="password" name="loginPassword" id="loginpassword" onChange={handleChangeLogin} />
-        <input type="submit" />
-      </form>
+        <h1>Log In!</h1>
+        <form onSubmit={handleLoginSubmit}>
+          <label htmlFor="loginName">Name:</label>
+          <input name="loginName" id="loginName" onChange={handleChangeLogin} />
+          <label htmlFor="loginPassword">Password:</label>
+          <input type="password" name="loginPassword" id="loginpassword" onChange={handleChangeLogin} />
+          <input type="submit" />
+        </form>
     </div>
   )
 }

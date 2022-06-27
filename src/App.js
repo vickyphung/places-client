@@ -21,7 +21,7 @@ import RemoveFavorite from './components/Favorite/RemoveFavorite';
 
 
 
-function App() {
+function App(props) {
 
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ function App() {
   }
   const setFavoriteIdAndLink = (id) => {
     setPlaceId(id)
-  navigate('/favorite/add')
+  // navigate('/favorite/add')
   }
   const setRemoveFavoriteIdAndLink = (id) => {
     setPlaceId(id)
@@ -54,65 +54,102 @@ function App() {
     setReviewId(id)
     navigate('/review/delete')
   }
-  const setReviewUpdateIdAndLink = (id) => {
-    setReviewId(id)
+  const setUpdateWTF = (review) => {
+    setReviewId(review)
     navigate('/review/update')
   }
 
   const [userId, setUserId] = useState([]);
+  
+    const setUserIdAndLink = (id) => {
+      setUserId(id);
+    };
+    const setUserUpdateIdAndLink = (id) => {
+      setUserId(id);
+    };
+    const setUserDeleteIdAndLink = (id) => {
+      setUserId(id);
+    };
 
-  const setUserDeleteIdAndLink = (id) => {
-    setUserId(id)
-    navigate('/user/delete')
-  }
+      const setUserFavoriteIdAndLink = (id) => {
+        setUserId(id);
+      };
 
-  const setUserUpdateIdAndLink = (id) => {
-    setUserId(id)
-    navigate('/user/update')
-  }
 
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route path="/places" element={<Places 
-          setDeleteId={setDeleteIdAndLink}
-          setUpdateId={setUpdateIdAndLink}
-          setReviewId={setReviewIdAndLink}
-          setFavoriteId={setFavoriteIdAndLink}
-          />} />
+        <Route
+          path="/user"
+          element={
+            <User
+              setLoggedInId={setUserIdAndLink}
+              setReviewDeleteId={setReviewDeleteIdAndLink}
+              setUpdate={setUpdateWTF}
+              setFavDelId={setRemoveFavoriteIdAndLink}
+              setUpdateId={setUserUpdateIdAndLink}
+              setDeleteId={setUserDeleteIdAndLink}
+              setUser={setUserIdAndLink}
+            />
+          }
+        />
 
-        <Route path="/places/add" element={<AddPlace />} />
-  
-        <Route path="/places/delete" element={<DeletePlace placeId={placeId} />} />
-        <Route path="/places/update" element={<UpdatePlace placeId={placeId} />} />
-
+        <Route
+          path="/places"
+          element={
+            <Places
+              setDeleteId={setDeleteIdAndLink}
+              setUpdateId={setUpdateIdAndLink}
+              setReviewId={setReviewIdAndLink}
+              setFavoriteId={setFavoriteIdAndLink}
+              userId={userId}
+              setUserFavoriteId={setUserFavoriteIdAndLink}
+            />
+          }
+        />
+        <Route path="/places/add" element={<AddPlace userId={userId} />} />
+        <Route
+          path="/places/delete"
+          element={<DeletePlace placeId={placeId} userId={userId} />}
+        />
+        <Route
+          path="/places/update"
+          element={<UpdatePlace placeId={placeId} userId={userId} />}
+        />
         <Route path="/reviews/" element={<Review />} />
-        <Route path="/review/add" element={<AddReview placeId={placeId}/>} />
-        <Route path="/review/delete" element={<DeleteReview reviewId={reviewId}/>} />
-        <Route path="/review/update" element={<UpdateReview reviewId={reviewId}/>} />
-
-        <Route path="/favorite/add" element={<AddFavorite placeId={placeId} />} />
-        <Route path="/favorite/delete" element={<RemoveFavorite placeId={placeId} />} />
-
+        <Route
+          path="/review/add"
+          element={<AddReview userId={userId} placeId={placeId} />}
+        />
+        <Route
+          path="/review/delete"
+          element={
+            <DeleteReview
+              reviewId={reviewId}
+              placeId={placeId}
+              userId={userId}
+            />
+          }
+        />
+        <Route
+          path="/review/update"
+          element={<UpdateReview reviewId={reviewId} />}
+        />
+        <Route
+          path="/favorite/add"
+          element={<AddFavorite placeId={placeId} userId={userId} />}
+        />
+        <Route
+          path="/favorite/delete"
+          element={<RemoveFavorite placeId={placeId} userId={userId} />}
+        />
         <Route path="/login" element={<Login />} />
-
-        <Route path="/user" element={<User 
-          setDeleteId={setUserDeleteIdAndLink}
-          setUpdateId={setUserUpdateIdAndLink}
-          setReviewDeleteId={setReviewDeleteIdAndLink}
-          setEditReviewId={setReviewUpdateIdAndLink}
-          setFavDelId={setRemoveFavoriteIdAndLink}
-          />} />
 
         <Route path="/user/delete" element={<DeleteUser userId={userId} />} />
         <Route path="/user/update" element={<UpdateUser userId={userId} />} />
-
-
-        <Route path="/nearby" element={<Nearby />} />
-
-
+        <Route path="/search" element={<Nearby />} />
       </Routes>
     </div>
   );
