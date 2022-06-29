@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import {
+  Button,
+
+} from "@chakra-ui/react";
+
+
+
 const AddFromMaps = (props) => {
 
 
@@ -30,7 +37,7 @@ const AddFromMaps = (props) => {
 
 
 
-    // const userId = "62b5153a18a020243c4bb4a0";
+    let fakeUserId = "62bbf966c4c434b12444023d";
 
   const [placeFormData, setPlaceFormData] = useState({
     name: "",
@@ -57,10 +64,10 @@ const AddFromMaps = (props) => {
         street: `${props.postFormData[0].short_name} ${props.postFormData[1].short_name}`,
         city: `${props.postFormData[3].short_name}`,
         state: `${props.postFormData[4].short_name}`,
-        zip: `${props.postFormData[6].short_name}`,
+        // zip: `${props.postFormData[6].short_name}`,
       },
       tags: [placeFormData.placeTags],
-      user: `${userId}`
+      user: `${fakeUserId}`
     });
     console.log(response);
     // localStorage.setItem("jwtToken", response.data.jwtToken);
@@ -68,14 +75,27 @@ const AddFromMaps = (props) => {
 
   return (
     <div>
-      <h1>Add from Maps</h1>
-    <form onSubmit={handleSubmit}>
-        <label htmlFor="placeName">Name:</label>
-        <input name="name" id="name" onChange={handleChange} />
+      <form className="addFromMapsForm" onSubmit={handleSubmit}>
+        <label className="nameLabel" htmlFor="placeName">
+          Name:
+        </label>
+        <input
+          className="nameInput"
+          name="name"
+          id="name"
+          onChange={handleChange}
+        />
 
-        <label htmlFor="placeTags">Tags:</label>
-        <input name="placeTags" id="placeTags" onChange={handleChange} />
-        <input type="submit" />
+        <label className="nameLabel" htmlFor="placeTags">
+          Tags:
+        </label>
+        <input
+          className="nameInput"
+          name="placeTags"
+          id="placeTags"
+          onChange={handleChange}
+        />
+        <Button className="subBtn" type="submit">+add</Button>
       </form>
     </div>
   );

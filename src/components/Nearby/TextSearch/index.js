@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import PlaceDetails from '../PlaceDetails';
+import { Container } from "@chakra-ui/react";
+
 
 const TextSearch = (props) => {
 
@@ -37,12 +39,19 @@ const TextSearch = (props) => {
       <div>
         {results?.map((result, index) => {
           return (
-            <div className="searchResults" key={index}>
-              <h2>{result.name}</h2>
-              <h3>Location</h3>
-              <p>{result.formatted_address}</p>
-              <PlaceDetails detailsId={result.place_id} />
-            </div>
+            <Container>
+              <div className="searchResults" key={index}>
+                <h2>
+                  <span className="placeTitle">{result.name}</span>
+                </h2>
+                <p>
+                  <span className='placeAddress'>{result.formatted_address}</span>
+                </p>
+                <div className='placeDetail'>
+                  <PlaceDetails detailsId={result.place_id} />
+                </div>
+              </div>
+            </Container>
           );
         })}
       </div>

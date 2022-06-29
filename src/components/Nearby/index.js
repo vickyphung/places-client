@@ -1,7 +1,7 @@
 import NavBar from '../NavBar';
 import Container from 'react-bootstrap/Container';
 import TextSearch from './TextSearch';
-
+import './style.css'
 const Nearby = (props) => {
 
   // const [lat, setLat] = useState([]);

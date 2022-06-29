@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 // import { useNavigate } from "react-router-dom";
+import NavBar from '../../NavBar';
 import axios from 'axios';
 
 const DeletePlace = (props) => {
@@ -20,7 +21,7 @@ const DeletePlace = (props) => {
       };
       delPlace();
       // eslint-disable-next-line
-      navigate("/home");
+      // useNavigate('../places');
     }, [props.placeId])
 
     // return (
@@ -28,7 +29,13 @@ const DeletePlace = (props) => {
     //     <h1>Delete Place</h1>
     //     </div>
     // )
-}
+
+
+return (
+  <NavBar />
+)
+
+  }
 
 export default DeletePlace;
 

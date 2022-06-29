@@ -3,6 +3,10 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import UpdateReview from '../Review/UpdateReview';
 import DeleteReview from "../Review/DeleteReview";
+import NavBar from '../NavBar';
+import './style.css'
+import { Container } from "@chakra-ui/react";
+
 
 const User = (props) => {
 
@@ -30,82 +34,92 @@ const User = (props) => {
     }, [props])
 
   return (
-    <div>
-      <h1>User</h1>
-      <hr></hr>
-      {userInfo?.map((user, index) => {
-        return (
-          <div className="user" key={index}>
-            <div>
-              <p>{user.name}</p>
-              <p>{user.email}</p>
-              <p>{user._id}</p>
-            </div>
+    <Container>
+      <div>
+        <NavBar />
+        <h1>User</h1>
+        <hr></hr>
+        {userInfo?.map((user, index) => {
+          return (
+            <div className="user" key={index}>
+              <div className="user">
+                <p>{user.name}</p>
+                <p>{user.email}</p>
+                <p>{user._id}</p>
+              </div>
 
-            <div className="favs">
-              <h3>Favorites</h3>
-              {user?.favorites?.map((favorite, index) => {
-                return (
-                  <div key={index} className="review">
-                    {favorite}
-                    <button onClick={() => props.setFavDelId(favorite)}>
-                      Remove Favorite
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
+              <div className="favs">
+                <h3>Favorites</h3>
+                {user?.favorites?.map((favorite, index) => {
+                  return (
+                    <div key={index} className="delFav">
+                      {favorite}
+                      <button
+                        onClick={() => props.setRemoveFavoriteId(favorite)}
+                      >
+                        Remove Favorite
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
 
-            <div className="reviews">
-              <h3>Reviews</h3>
-              {user?.reviews?.map((review, index) => {
-                return (
-                  <div key={index} className="review">
-                    {review}
-                    {/* {review.user}
+              <div className="reviews">
+                <h3>Reviews</h3>
+                {user?.reviews?.map((review, index) => {
+                  return (
+                    <div key={index} className="review">
+                      {review}
+                      {/* {review.user}
                     {review.place}
                     {review.review} */}
-                   
-                    <UpdateReview reviewId={review} />
-                    {/* <DeleteReview reviewId={review} /> */}
-                    <button onClick={() => props.setReviewDeleteId(review)}>Delete Review</button>
-                  </div>
-                );
-              })}
-            </div>
+<div className="updateRev">
+                      <UpdateReview reviewId={review} />
+                    </div>  {/* <DeleteReview reviewId={review} /> */}
+                      <button onClick={() => props.setReviewDeleteId(review)}>
+                        Delete Review
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
 
-            <div>
-              <h3>Posts</h3>
-              {user?.posts?.map((post, index) => {
-                return (
-                  <div key={index} className="post">
-                    {post}
-                    <button onClick={() => props.setDeleteId(post)}>
-                      Delete
-                    </button>
-                    <button onClick={() => props.setUpdateId(post)}>
-                      Edit
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
+              <div>
+                <h3>Posts</h3>
+                {user?.posts?.map((post, index) => {
+                  return (
+                    <div key={index} className="post">
+                      {post}
+                      <button onClick={() => props.setDeleteId(post)}>
+                        Delete
+                      </button>
+                      <button onClick={() => props.setUpdateId(post)}>
+                        Edit
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
 
-            <div>
-              <h3>Functions</h3>
-              <button onClick={() => navigate("/user/delete")}>
-                Delete User
-              </button>
-              <button onClick={() => navigate("/user/update")}>
-                Update User
-              </button>
-              <button onClick={() => props.setUpdateId(user._id)}>Edit User</button>          
+              <div>
+                <h3>Functions</h3>
+                <button onClick={() => navigate("/user/delete")}>
+                  Delete User
+                </button>
+                <br></br>
+                <button onClick={() => navigate("/user/update")}>
+                  Update User
+                </button>
+                {/* <button onClick={() => props.setUpdateId(user._id)}>
+                  Edit User
+                </button> */}
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
-  )
+          );
+        })}
+      </div>
+    </Container>
+  );
 }
 
 export default User;

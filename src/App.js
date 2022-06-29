@@ -8,7 +8,9 @@ import UpdatePlace from './components/Places/UpdatePlace';
 import User from './components/User';
 import DeleteUser from './components/User/DeleteUser';
 import UpdateUser from './components/User/UpdateUser';
-import Login from './components/Login';
+import UserLogin from './components/Login/UserLogin';
+import CreateUser from "./components/Login/CreateUser";
+import Login from './components/Login/index';
 import Home from './components/Home';
 import AddReview from './components/Review/AddReview';
 import Review from './components/Review';
@@ -39,13 +41,23 @@ function App(props) {
     setPlaceId(id)
   navigate('/review/add')
   }
-  const setFavoriteIdAndLink = (id) => {
+  const setAddFavoriteIdAndLink = (id) => {
     setPlaceId(id)
   // navigate('/favorite/add')
   }
-  const setRemoveFavoriteIdAndLink = (id) => {
-    setPlaceId(id)
-  navigate('/favorite/delete')
+
+  const [favoriteId, setFavoriteId] = useState([]);
+
+  const setFavoriteIdAndLink = (id) => {
+    setFavoriteId(id);
+    navigate("/favorite/delete");
+  };
+
+
+
+  const setRemoveFavoriteIdAndLink = (favorite) => {
+    setFavoriteId(favorite)
+    navigate('/favorite/delete')
   }
 
   const [reviewId, setReviewId] = useState([]);
@@ -71,9 +83,9 @@ function App(props) {
       setUserId(id);
     };
 
-      const setUserFavoriteIdAndLink = (id) => {
-        setUserId(id);
-      };
+    const setUserFavoriteIdAndLink = (id) => {
+      setUserId(id);
+    };
 
 
   return (
@@ -88,7 +100,7 @@ function App(props) {
               setLoggedInId={setUserIdAndLink}
               setReviewDeleteId={setReviewDeleteIdAndLink}
               setUpdate={setUpdateWTF}
-              setFavDelId={setRemoveFavoriteIdAndLink}
+              setFavoriteId={setFavoriteIdAndLink}
               setUpdateId={setUserUpdateIdAndLink}
               setDeleteId={setUserDeleteIdAndLink}
               setUser={setUserIdAndLink}
@@ -103,7 +115,7 @@ function App(props) {
               setDeleteId={setDeleteIdAndLink}
               setUpdateId={setUpdateIdAndLink}
               setReviewId={setReviewIdAndLink}
-              setFavoriteId={setFavoriteIdAndLink}
+              setAddFavoriteId={setAddFavoriteIdAndLink}
               userId={userId}
               setUserFavoriteId={setUserFavoriteIdAndLink}
             />
@@ -143,8 +155,15 @@ function App(props) {
         />
         <Route
           path="/favorite/delete"
-          element={<RemoveFavorite placeId={placeId} userId={userId} />}
+          element={
+            <RemoveFavorite
+              placeId={placeId}
+              userId={userId}
+              favoriteId={favoriteId}
+            />
+          }
         />
+        {/* <Route path="/login" element={<UserLogin />} /> */}
         <Route path="/login" element={<Login />} />
 
         <Route path="/user/delete" element={<DeleteUser userId={userId} />} />

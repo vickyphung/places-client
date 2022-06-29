@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const UpdateUser = (props) => {
 
     const [data, setData] = useState([]);
-
+const navigate = useNavigate();
     const [userFormData, setUserFormData] = useState({
         name: "",
         email: ""
@@ -23,6 +24,7 @@ const UpdateUser = (props) => {
     });
     console.log(response);
     setData(response.data)
+   { navigate('/user')}
     }
 
     return(

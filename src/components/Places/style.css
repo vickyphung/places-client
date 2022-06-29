@@ -1,3 +1,43 @@
 .place {
     border: 1px solid pink;
 }
+
+
+.addReviewFavoriteBtns {
+    display: inline-flex;
+}
+
+.address {
+    background-color: rgb(247, 236, 238);
+}
+
+
+.placeName {
+    font-size: 2rem;
+}
+
+.addReviewText {
+    border: 2px solid black;
+    width: 79%;
+}
+
+
+.tags {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.tag {
+    padding: 3px;
+    color: rgb(216, 30, 154)
+}
+
+.favCount {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.favCounter {
+    color: rgb(216, 30, 154)
+    }

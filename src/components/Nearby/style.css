@@ -1,0 +1,36 @@
+.searchR.esults {
+    border: 1px solid pink;
+}
+.placeTitle {
+    font-size: 1.8rem;
+}
+
+.placeDetail {
+    gap: 5px;
+}
+.addFromMapsForm {
+    display: flex;
+flex-direction: column;
+gap: .5rem;
+}
+
+.nameLabel {
+    font-weight: 500;
+}
+
+.nameInput {
+    border: 1px solid pink;
+    border-radius: .5em;;
+}
+
+.subBtn {
+    text-align: left;
+}
+
+.mapResults {
+    margin: 1rem;
+}
+
+.category {
+    margin: .25rem;
+}

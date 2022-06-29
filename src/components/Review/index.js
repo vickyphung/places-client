@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import NavBar from '../NavBar';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+  List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList
+} from "@chakra-ui/react";
 
 const Review = (props) => {
 
@@ -22,7 +35,6 @@ const Review = (props) => {
       fetchData();
     }, [])
   
-
   return (
     <div>
       {console.log(reviews)}
@@ -30,26 +42,26 @@ const Review = (props) => {
       <div><h1>Reviews</h1></div>
 
 
+
+      <div>
+
       {reviews?.map((review, index) => {
         return (
+<UnorderedList>
+          
           <div className="reviews" key={index}>     
 
-            <div className="review"> 
-                <h3>Place Name</h3>
-                    <p>{review.place.name}</p>
-                <h3>Review</h3>
-                    <p>{review.review}</p>
-                <h3>Posted by</h3>
-                    <p>{review.user.name}</p>
-                <h3>Date Posted</h3>
-                    <p>{review.createdAt}</p>
-            </div>
-          
-          </div>
-        )
-      })}
+<ListItem className='title'> <p>{review.place.name}</p></ListItem>
+<ListItem><p>{review.review}</p></ListItem>
+<ListItem><p>Created by {review.user.name} at {review.createdAt}</p></ListItem>
+      
     </div>
-  )
+</UnorderedList>
+          
+        )
+      })} </div> 
+      
+  ) </div> )
 }
 
 export default Review;

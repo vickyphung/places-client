@@ -2,88 +2,57 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Tagify from "@yaireo/tagify";
 
-
 const AddPlace = (props) => {
-  const fakeUserId = "62b5153a18a020243c4bb4a0";
 
+    const fakeUserId = "62bbf966c4c434b12444023d";
 
-  const [placeFormData, setPlaceFormData] = useState({
-    name: "",
-    street: "",
-    city: "",
-    state: "",
-    zip: "",
-    user: `${fakeUserId}`,
-  });
-
-  const [tagFormData, setTagFormData] = useState("");
-
-  const handleChange = (event) => {
-    setPlaceFormData({
-      ...placeFormData,
-      [event.target.name]: event.target.value,
+    const [placeFormData, setPlaceFormData] = useState({
+        name: "",
+        street: "",
+        city: "",
+        state: "",
+        zip: "",
+        user: `${fakeUserId}`,
     });
-  };
 
+    const [tagFormData, setTagFormData] = useState("");
 
-    const input = document.querySelector("input[name=placeTags]");
-    new Tagify(input);
-
-    const handleTagChange = (e) => {
-        setTagFormData({
-            tagFormData,
-            [e.target.name]: e.target.value
-        });  
+    const handleChange = (event) => {
+        setPlaceFormData({
+        ...placeFormData,
+        [event.target.name]: event.target.value,
+        });
     };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await axios.post("http://localhost:8800/places/add", {
-      name: placeFormData.placeName,
-      location: {
-        street: placeFormData.placeStreet,
-        city: placeFormData.placeCity,
-        state: placeFormData.placeState,
-        zip: placeFormData.placeZip,
-      },
-      tags: [tagFormData.placeTags],
-      user: `${fakeUserId}`,
-    });
-    console.log(response);
-    // localStorage.setItem("jwtToken", response.data.jwtToken);
-  };
+        const input = document.querySelector("input[name=placeTags]");
+        new Tagify(input);
 
+        const handleTagChange = (e) => {
+            setTagFormData({
+                tagFormData,
+                [e.target.name]: e.target.value
+            });  
+        };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const response = await axios.post("http://localhost:8800/places/add", {
+            name: placeFormData.placeName,
+            location: {
+                street: placeFormData.placeStreet,
+                city: placeFormData.placeCity,
+                state: placeFormData.placeState,
+                zip: placeFormData.placeZip,
+            },
+            tags: [tagFormData.placeTags],
+            user: `${fakeUserId}`,
+        });
+        console.log(response);
+        // localStorage.setItem("jwtToken", response.data.jwtToken);
+    };
 
   return (
     <div>
-
-
-
-
-
-
-
-
-
 
       <h1>Add a Place</h1>
       <form onSubmit={handleSubmit}>
