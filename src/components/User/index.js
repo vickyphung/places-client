@@ -5,7 +5,6 @@ import UpdateReview from '../Review/UpdateReview';
 import DeleteReview from "../Review/DeleteReview";
 import NavBar from '../NavBar';
 import './style.css'
-import { Container } from "@chakra-ui/react";
 
 
 const User = (props) => {
@@ -34,7 +33,7 @@ const User = (props) => {
     }, [props])
 
   return (
-    <Container>
+    <div>
       <div>
         <NavBar />
         <h1>User</h1>
@@ -118,7 +117,7 @@ const User = (props) => {
           );
         })}
       </div>
-    </Container>
+    </div>
   );
 }
 

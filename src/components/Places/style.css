@@ -1,5 +1,8 @@
 .place {
     border: 1px solid pink;
+    margin: 1em;
+    padding: 1em;
+    width: 460px;
 }
 
 
@@ -9,6 +12,8 @@
 
 .address {
     background-color: rgb(247, 236, 238);
+    margin: ;
+    padding: 1em;
 }
 
 

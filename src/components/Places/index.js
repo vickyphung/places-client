@@ -56,13 +56,10 @@ const Places = (props) => {
     <Container>
       <div>
         {console.log(places)}
-        <div>
           <NavBar />
         </div>
         <div>
           <h1>Places</h1>
-        </div>
-        <div></div>
 
         {places?.map((placeList, index) => {
           return (
@@ -102,16 +99,13 @@ const Places = (props) => {
                   aria-controls="reviews-list"
                   aria-expanded={open}
                 >
-                  <h3>Reviews</h3>
-                </Button>
+                  <h3>Reviews</h3>                </Button>
                 {placeList?.reviews?.map((review, index) => {
                   return (
-                    <Collapse in={open}>
                       <div key={index} id="reviews-list">
                         <h4>Review:</h4> <p>{review.review}</p>
                         <h4>Posted by:</h4> <p>{review.user}</p>
                       </div>
-                    </Collapse>
                   );
                 })}
               </div>
