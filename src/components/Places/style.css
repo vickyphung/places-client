@@ -29,7 +29,6 @@
 
 .tags {
     display: flex;
-    justify-content: center;
     gap: 5px;
 }
 
@@ -40,7 +39,6 @@
 
 .favCount {
     display: flex;
-    justify-content: center;
     gap: 5px;
 }
 .favCounter {

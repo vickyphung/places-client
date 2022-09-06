@@ -9,28 +9,28 @@ function NavBar (){
 
             <Nav fill variant="tabs" defaultActiveKey="/home">
                 <Nav.Item>
-                    <Nav.Link href="/">home</Nav.Link>
+                    <Nav.Link href="/">places</Nav.Link>
                 </Nav.Item>
 
-                <Nav.Item>
+                {/* <Nav.Item>
                     <Nav.Link href="/login">login</Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
 
-                <Nav.Item>
+                {/* <Nav.Item>
                     <Nav.Link href="/places">places</Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
 
                 <Nav.Item>
-                    <Nav.Link href="/places/add">add place</Nav.Link>
+                    <Nav.Link href="/places/add">add place manually</Nav.Link>
                 </Nav.Item>
 
-                <Nav.Item>
+                {/* <Nav.Item>
                     <Nav.Link href="/reviews">reviews</Nav.Link>
-                </Nav.Item>
-
+                </Nav.Item> */}
+{/* 
                 <Nav.Item>
                     <Nav.Link href="/user">user</Nav.Link>
-                </Nav.Item>
+                </Nav.Item> */}
 
                 <Nav.Item>
                     <Nav.Link href="/search">search</Nav.Link>

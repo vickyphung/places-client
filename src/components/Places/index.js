@@ -56,11 +56,8 @@ const Places = (props) => {
     <Container>
       <div>
         {console.log(places)}
-          <NavBar />
         </div>
         <div>
-          <h1>Places</h1>
-
         {places?.map((placeList, index) => {
           return (
             <div className="place" key={index}>

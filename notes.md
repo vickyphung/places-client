@@ -5,6 +5,12 @@
 //why are the pictures just a bunch a text symbols
 //i cna save something a thousand times
 
+//Open Modal for More Info and REVIEWS on Places, on places page
+
+//google search NEXT PAGE BUTTON
+
+
+
 //review button is broken
 
 

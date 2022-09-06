@@ -1,5 +1,5 @@
 import NavBar from '../NavBar';
-import Container from 'react-bootstrap/Container';
+
 import TextSearch from './TextSearch';
 import './style.css'
 const Nearby = (props) => {
@@ -16,10 +16,22 @@ const Nearby = (props) => {
 
   return (
     <div>
-        <Container>
             <NavBar />
-            <TextSearch />         
-        </Container>
+            Google Places API Search to search and add Places to the database
+            <TextSearch /> 
+
+
+            Places Database Search
+            <form>Tag Search
+              <input></input>
+            </form>       
+            <form>City Search
+              <input></input>
+            </form>   
+            <form>Zipcode Search
+              <input></input>
+            </form>   
+
     </div>
   )
 }
