@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.css'
-import NavBar from '../NavBar';
 import Button from 'react-bootstrap/Button'
 import Collapse from 'react-bootstrap/Collapse'
 import AddReview from '../Review/AddReview';
@@ -54,26 +53,29 @@ const Places = (props) => {
 
   return (
     <Container>
-      <div>
+
+        <div className='placeList'>
         {console.log(places)}
-        </div>
-        <div>
         {places?.map((placeList, index) => {
           return (
             <div className="place" key={index}>
-              <div>
+              
+              <div className="placeName">
                 <h2>
-                  <span className="placeName">{placeList.name}</span>
+                  {placeList.name}
                 </h2>
               </div>
+
               <div className="address">
                 <p>{placeList.location.street}</p>
                 <p>{placeList.location.city}</p>
                 <p>{placeList.location.state}</p>
                 <p>{placeList.location.zip}</p>
               </div>
+              
+              
               <div className="tags">
-                <label className="tags">tags: </label>
+                <h3 className='tagsLabel'>Tags:</h3>
                 {placeList?.tags?.map((tag, index) => {
                   return (
                     <div key={index} className="tag">
@@ -82,34 +84,41 @@ const Places = (props) => {
                   );
                 })}
               </div>
+              
+              
               <div className="favCount">
-                <label className="tags">favs: </label>
+                <h3 className='tagsLabel'>Likes: </h3>
 
                 <p>
                   <span className="favCounter">{placeList.favorites}</span>
                 </p>
               </div>
+              
+              
+              
               <div>
-                <Button
-                  variant="info"
-                  onClick={() => setOpen(!open)}
-                  aria-controls="reviews-list"
-                  aria-expanded={open}
-                >
-                  <h3>Reviews</h3>                </Button>
+        
+                  <h3 className='tagsLabel'>Reviews:</h3>               
                 {placeList?.reviews?.map((review, index) => {
                   return (
                       <div key={index} id="reviews-list">
-                        <h4>Review:</h4> <p>{review.review}</p>
-                        <h4>Posted by:</h4> <p>{review.user}</p>
+                        <h3 className='tagsLabel'>Review:</h3> <p>{review.review}</p>
+                        <h3 className='tagsLabel'>Posted by:</h3> <p>{review.user}</p>
                       </div>
                   );
                 })}
               </div>
+              
+              
+              
               {/* <div>
               <h3>Posted by</h3>
               <p>{placeList.user ? placeList.user : "Unknown"}</p>
             </div> */}
+              
+              
+              
+              
               <div className="addReviewFavoriteBtns">
                 <AddReview placeId={placeList._id} userId={props.userId} />
                 <AddFavorite placeId={placeList._id} userId={props.userId} />
@@ -117,6 +126,10 @@ const Places = (props) => {
                 Delete
               </Button> */}
               </div>
+            
+            
+            
+            
             </div>
           );
         })}

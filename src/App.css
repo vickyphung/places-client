@@ -1,4 +1,34 @@
+* {
+  font-family: Helvetica;
+}
+
+
 div {
   padding: 1em;
-  text-align: left;
+}
+
+
+
+label {
+  padding: .5em;
+  margin: 1em;
+  width: 80px;
+  border: 2px solid rgb(60, 126, 126);
+  background-color: #005F60;
+  border-radius: 1em;
+}
+
+
+
+input {
+  border: 2px solid rgb(60, 126, 126);
+  background-color: #249EAD;
+  border-radius: 1em;
+  width: 400px;
+  height: 40px;
+}
+
+.addPlace {
+  display:  flex;
+  flex-direction: column;
 }

@@ -1,9 +1,21 @@
+.placeList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .place {
-    border: 1px solid pink;
+    border: 5px solid #005F60;
     margin: 1em;
     padding: 1em;
-    width: 460px;
+    width: 60%;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
 }
+
 
 
 .addReviewFavoriteBtns {
@@ -11,9 +23,10 @@
 }
 
 .address {
-    background-color: rgb(247, 236, 238);
-    margin: ;
+    background-color: #005F60;
     padding: 1em;
+    color: white;
+    border-radius: 1em;
 }
 
 
@@ -34,7 +47,7 @@
 
 .tag {
     padding: 3px;
-    color: rgb(216, 30, 154)
+    color: #249EAD;
 }
 
 .favCount {
@@ -42,5 +55,11 @@
     gap: 5px;
 }
 .favCounter {
-    color: rgb(216, 30, 154)
+    color: #249EAD
     }
+
+
+
+.tagsLabel {
+     font-weight: bold;
+}

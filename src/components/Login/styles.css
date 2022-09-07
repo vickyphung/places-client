@@ -4,23 +4,3 @@
 }
 
 
-
-label {
-    padding: 1em;
-    margin: 1em;
-    border: 2px solid rgb(60, 126, 126);
-    background-color: rgb(75, 223, 223);
-    border-radius: 10%;
-}
-
-
-
-input {
-    padding: 1em;
-    margin: 1em;
-    border: 2px solid rgb(60, 126, 126);
-    background-color: rgb(75, 223, 223);
-    border-radius: 5%;
-
-    
-}

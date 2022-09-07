@@ -52,20 +52,32 @@ const AddPlace = (props) => {
     };
 
   return (
-    <div>
+    <div className="addPlace">
 
       <h1>Add a Place</h1>
       <form onSubmit={handleSubmit}>
+       
+        <div>
         <label htmlFor="placeName">Name:</label>
         <input name="placeName" id="placeName" onChange={handleChange} />
+        </div>
+        <div>
         <label htmlFor="placeStreet">Street:</label>
         <input name="placeStreet" id="placeStreet" onChange={handleChange} />
+        </div>
+        <div>
         <label htmlFor="placeCity">City:</label>
         <input name="placeCity" id="placeCity" onChange={handleChange} />
+        </div>
+        <div>
         <label htmlFor="placeState">State:</label>
         <input name="placeState" id="placeState" onChange={handleChange} />
+        </div>
+        <div>
         <label htmlFor="placeZip">Zip:</label>
         <input name="placeZip" id="placeZip" onChange={handleChange} />
+        </div>
+        <div>
         <label htmlFor="placeTags">Tags:</label>
 
         <input
@@ -73,8 +85,11 @@ const AddPlace = (props) => {
           id="placeTags"
           onChange={handleTagChange}
         ></input>
+        </div>
+        <div>
+        <input className="submitButton" type="submit" />
+        </div>
 
-        <input type="submit" />
       </form>
     </div>
   );
