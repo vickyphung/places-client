@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.css";
@@ -17,6 +18,29 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Container from "react-bootstrap/esm/Container";
+=======
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './style.css'
+import Button from 'react-bootstrap/Button'
+import Collapse from 'react-bootstrap/Collapse'
+import AddReview from '../Review/AddReview';
+import AddFavorite from '../Favorite/AddFavorite'
+ import {
+   Divider,
+   Modal,
+   ModalOverlay,
+   ModalContent,
+   ModalHeader,
+   ModalFooter,
+   ModalBody,
+   ModalCloseButton,
+   useDisclosure
+ } from "@chakra-ui/react";
+import Container from 'react-bootstrap/esm/Container';
+
+
+>>>>>>> 88b2ea0b6953da6cc85dba33c2c67652231480e2
 
 const Places = (props) => {
   console.log("PINKY!");
@@ -99,7 +123,6 @@ const Places = (props) => {
               <h3>Posted by</h3>
               <p>{placeList.user ? placeList.user : "Unknown"}</p>
             </div> */}
-
               <div className="addReviewFavoriteBtns">
                 <AddReview placeId={placeList._id} userId={props.userId} />
                 <AddFavorite placeId={placeList._id} userId={props.userId} />
@@ -108,6 +131,10 @@ const Places = (props) => {
 
                 {/* <Button onClick={() => props.setUpdateId(placeList._id)}>Edit</Button>   */}
               </div>
+            
+            
+            
+            
             </div>
           );
         })}

@@ -21,7 +21,11 @@ const Nearby = (props) => {
             <TextSearch /> 
 
 
+<<<<<<< HEAD
             {/* Places Database Search
+=======
+            Places Database Search
+>>>>>>> 88b2ea0b6953da6cc85dba33c2c67652231480e2
             <form>Tag Search
               <input></input>
             </form>       
@@ -30,7 +34,11 @@ const Nearby = (props) => {
             </form>   
             <form>Zipcode Search
               <input></input>
+<<<<<<< HEAD
             </form>    */}
+=======
+            </form>   
+>>>>>>> 88b2ea0b6953da6cc85dba33c2c67652231480e2
 
     </div>
   )

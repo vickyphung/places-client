@@ -3,6 +3,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
+=======
+}
+
+
+.place {
+    border: 5px solid #005F60;
+    margin: 1em;
+    padding: 1em;
+    width: 60%;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+>>>>>>> 88b2ea0b6953da6cc85dba33c2c67652231480e2
 }
 
 .place {
@@ -18,11 +32,13 @@
     justify-content: center;
 }
 
+
 .addReviewFavoriteBtns {
     display: inline-flex;
 }
 
 .address {
+<<<<<<< HEAD
     /* border: 3px solid #00b2ca; */
     padding: 1em;
     color: white;
@@ -30,6 +46,12 @@
     display: flex;
     flex-direction: column;
     font-size: 1.35em;
+=======
+    background-color: #005F60;
+    padding: 1em;
+    color: white;
+    border-radius: 1em;
+>>>>>>> 88b2ea0b6953da6cc85dba33c2c67652231480e2
 }
 
 .placeName {
@@ -47,14 +69,20 @@
 }
 
 .tag {
+<<<<<<< HEAD
     padding: .05px;
     color: #03045e;
+=======
+    padding: 3px;
+    color: #249EAD;
+>>>>>>> 88b2ea0b6953da6cc85dba33c2c67652231480e2
 }
 
 .favCount {
     display: flex;
     gap: 5px;
 }
+<<<<<<< HEAD
 
 .favCounter, .reviewText {
     color: #d5edf2;
@@ -65,4 +93,14 @@
 .tagsLabel {
     letter-spacing: .25px;
     color: white;
+=======
+.favCounter {
+    color: #249EAD
+    }
+
+
+
+.tagsLabel {
+     font-weight: bold;
+>>>>>>> 88b2ea0b6953da6cc85dba33c2c67652231480e2
 }
