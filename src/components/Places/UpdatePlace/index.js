@@ -6,7 +6,7 @@ const UpdatePlace = (props) => {
     const [place, setPlace] = useState([]);
 
     useEffect(() => {
-      const fetchData = async () => {
+      const updatePlace = async () => {
         const response = await axios.get(`http://localhost:8800/places/id/${props.placeId}`
         
         //  , {
@@ -20,7 +20,7 @@ const UpdatePlace = (props) => {
         setPlace(response.data);
 
       }
-      fetchData();
+      updatePlace();
     }, [props.placeId])
 
 

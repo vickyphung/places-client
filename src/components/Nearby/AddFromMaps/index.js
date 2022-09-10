@@ -46,7 +46,7 @@ const AddFromMaps = (props) => {
     state: "",
     zip: "",
     tags: [""],
-    //user: `${userId}`
+    user: `${userId}`
   });
 
   const handleChange = (event) => {

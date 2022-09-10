@@ -34,3 +34,9 @@ gap: .5rem;
 .category {
     margin: .25rem;
 }
+
+.submitButton {
+    width: 500px;
+    color: white;
+    background-color: #F78104;
+}

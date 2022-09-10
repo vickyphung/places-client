@@ -42,11 +42,7 @@ const AddFavorite = (props) => {
                 addFav();
               }}
             >
-              {/* <IconButton
-                aria-label="Add to friends"
-                icon={<AddIcon w={3} h={3} />}
-              />{" "} */}
-             + save
+             + like
             </Button>
           </WrapItem>
         </ButtonGroup>

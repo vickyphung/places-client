@@ -49,7 +49,8 @@ const PlaceDetails = (props) => {
 
           {/* <p>
             <span className="placeName">{details.name}</span>
-          </p> */}
+          </p>  */}
+
           <p>{details.business_status}</p>
 
           {details?.address_components?.map((result, index) => {
@@ -88,6 +89,7 @@ const PlaceDetails = (props) => {
             <ModalContent>
               <ModalHeader>Modal Title</ModalHeader>
               <ModalCloseButton />
+              
               <ModalBody>
                 {details?.reviews?.map((review, index) => {
                   return (
@@ -115,6 +117,8 @@ const PlaceDetails = (props) => {
             <ModalContent>
               <ModalHeader>Add To Places</ModalHeader>
               <ModalCloseButton />
+             
+             
               <ModalBody>
                 <AddFromMaps postFormData={addFromMap.address} />
               </ModalBody>

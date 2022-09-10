@@ -122,19 +122,24 @@ function App(props) {
           }
         />
         <Route path="/places/add" element={<AddPlace userId={userId} />} />
+
+        
         <Route
           path="/places/delete"
           element={<DeletePlace placeId={placeId} userId={userId} />}
         />
+
         <Route
           path="/places/update"
           element={<UpdatePlace placeId={placeId} userId={userId} />}
         />
+
         <Route path="/reviews/" element={<Review />} />
         <Route
           path="/review/add"
           element={<AddReview userId={userId} placeId={placeId} />}
         />
+
         <Route
           path="/review/delete"
           element={

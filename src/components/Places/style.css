@@ -1,48 +1,68 @@
-.place {
-    border: 1px solid pink;
-    margin: 1em;
-    padding: 1em;
-    width: 460px;
+.placeList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.place {
+    border: 8px solid #03045e;
+    border-radius: 1em;
+    background-color: #0077b6;
+    color: #caf0f8;
+    margin: 1em;
+    padding: 2em;
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .addReviewFavoriteBtns {
     display: inline-flex;
 }
 
 .address {
-    background-color: rgb(247, 236, 238);
-    margin: ;
+    /* border: 3px solid #00b2ca; */
     padding: 1em;
+    color: white;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.35em;
 }
-
 
 .placeName {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    color: #0077b6;
+    /* border: 3px solid #03045e; */
+    border-radius: .5em;
+    background-color: white;
+    font-weight: bold;
 }
-
-.addReviewText {
-    border: 2px solid black;
-    width: 79%;
-}
-
 
 .tags {
     display: flex;
-    justify-content: center;
     gap: 5px;
 }
 
 .tag {
-    padding: 3px;
-    color: rgb(216, 30, 154)
+    padding: .05px;
+    color: #03045e;
 }
 
 .favCount {
     display: flex;
-    justify-content: center;
     gap: 5px;
 }
-.favCounter {
-    color: rgb(216, 30, 154)
+
+.favCounter, .reviewText {
+    color: #d5edf2;
+    padding: .25em;
+    font-size: 1.15rem;
     }
+
+.tagsLabel {
+    letter-spacing: .25px;
+    color: white;
+}

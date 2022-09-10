@@ -1,7 +1,6 @@
 import NavBar from "../NavBar";
-import "./style.css";
-import Login from "../Login/"
-
+// import Login from "../Login/"
+import Places from "../Places"
 
 
 function Home (props){
@@ -9,7 +8,9 @@ function Home (props){
     return (
       <div className="home">
         <NavBar />
-        <Login />
+        {/* <Login /> */}
+        <h1><span className="title">places to go in the DMV</span></h1>
+        <Places />
       </div>
     );
 }

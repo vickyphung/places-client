@@ -24,11 +24,11 @@ const DeletePlace = (props) => {
       // useNavigate('../places');
     }, [props.placeId])
 
-    // return (
-    //     <div>
-    //     <h1>Delete Place</h1>
-    //     </div>
-    // )
+    return (
+        <div>
+        <h1>Delete Place</h1>
+        </div>
+    )
 
 
 return (
