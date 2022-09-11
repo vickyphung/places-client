@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../style.css'
 
 import {
-
+Button,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -15,7 +15,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-import Button from 'react-bootstrap/esm/Button';
+
 
 const AddReview = (props) => {
 
@@ -53,11 +53,11 @@ const AddReview = (props) => {
 
     return (
       <div>
-        <Stack direction="row" spacing={4}>
-          <Button size="sm" colorScheme="pink" onClick={onOpen}>
+          <Button colorScheme="pink" onClick={onOpen}>
             + review
           </Button>
 
+        <Stack direction="row" spacing={4}>
           <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>

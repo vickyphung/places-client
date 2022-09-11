@@ -33,7 +33,7 @@ function App(props) {
     setPlaceId(id)
     navigate('/places/delete')
   }
-  const setUpdateIdAndLink = (id) => {
+  const setPlaceUpdateIdAndLink = (id) => {
     setPlaceId(id)
     navigate('/places/update')
   }
@@ -113,7 +113,7 @@ function App(props) {
           element={
             <Places
               setDeleteId={setDeleteIdAndLink}
-              setUpdateId={setUpdateIdAndLink}
+              setPlaceUpdateId={setPlaceUpdateIdAndLink}
               setReviewId={setReviewIdAndLink}
               setAddFavoriteId={setAddFavoriteIdAndLink}
               userId={userId}
@@ -133,6 +133,9 @@ function App(props) {
           path="/places/update"
           element={<UpdatePlace placeId={placeId} userId={userId} />}
         />
+
+        <Route path="/places/update" element={<UpdatePlace placeId={placeId} />} />
+
 
         <Route path="/reviews/" element={<Review />} />
         <Route

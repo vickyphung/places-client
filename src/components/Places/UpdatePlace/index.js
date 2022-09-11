@@ -43,10 +43,10 @@ const UpdatePlace = (props) => {
     const response = await axios.put(`http://localhost:8800/places/update/${props.placeId}`, {
         name: placeFormData.placeName,
         location: {
-             street: placeFormData.placeStreet,
-             city: placeFormData.placeCity,
-             state: placeFormData.placeState,
-             zip: placeFormData.placeZip,
+                street: placeFormData.placeStreet,
+                city: placeFormData.placeCity,
+                state: placeFormData.placeState,
+                zip: placeFormData.placeZip,
         },
         tags: [placeFormData.placeTags]
     });

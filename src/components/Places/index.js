@@ -1,46 +1,25 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./style.css";
-import Button from "react-bootstrap/Button";
-import Collapse from "react-bootstrap/Collapse";
 import AddReview from "../Review/AddReview";
 import AddFavorite from "../Favorite/AddFavorite";
-import {
-  Divider,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
+// import {
+//   Divider,
+//   Button
+//   // Modal,
+//   // ModalOverlay,
+//   // ModalContent,
+//   // ModalHeader,
+//   // ModalFooter,
+//   // ModalBody,
+//   // ModalCloseButton,
+//   // useDisclosure,
+// } from "@chakra-ui/react";
+
+import { Button, Divider } from "@chakra-ui/react";
+
 import Container from "react-bootstrap/esm/Container";
-=======
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import './style.css'
-import Button from 'react-bootstrap/Button'
-import Collapse from 'react-bootstrap/Collapse'
-import AddReview from '../Review/AddReview';
-import AddFavorite from '../Favorite/AddFavorite'
- import {
-   Divider,
-   Modal,
-   ModalOverlay,
-   ModalContent,
-   ModalHeader,
-   ModalFooter,
-   ModalBody,
-   ModalCloseButton,
-   useDisclosure
- } from "@chakra-ui/react";
-import Container from 'react-bootstrap/esm/Container';
-
-
->>>>>>> 88b2ea0b6953da6cc85dba33c2c67652231480e2
+import NavBar from "../NavBar";
 
 const Places = (props) => {
   console.log("PINKY!");
@@ -68,14 +47,18 @@ const Places = (props) => {
     fetchData();
   }, [props.setFavoriteId]);
 
-  // const delPost = (data) => {
-  //   props.setDeleteId(data)
-  //   };
+  const delPost = (data) => {
+    props.setDeleteId(data);
+  };
 
   return (
     <Container>
       <div className="placeList">
         {console.log(places)}
+        <NavBar />
+        <h1>
+          <span className="title">places to go in the DMV</span>
+        </h1>
         {places?.map((placeList, index) => {
           return (
             <div className="place" key={index}>
@@ -89,6 +72,10 @@ const Places = (props) => {
                 <p>{placeList.location.state}</p>
                 <p>{placeList.location.zip}</p>
               </div>
+
+
+
+            <div className="placeInfo">
 
               <div className="tags">
                 {placeList?.tags?.map((tag, index) => {
@@ -111,9 +98,9 @@ const Places = (props) => {
                 {placeList?.reviews?.map((review, index) => {
                   return (
                     <div key={index} id="reviews-list">
-                      <p className="reviewText">{review.review}</p>
-                      <h3 className="tagsLabel">Posted by:</h3>{" "}
-                      <p className="reviewText">{review.user}</p>
+                      <p className="reviewText">∙{review.review}</p>
+                      {/* <h3 className="tagsLabel">Posted by:</h3>{" "}
+                      <p className="reviewText">{review.user}</p> */}
                     </div>
                   );
                 })}
@@ -123,18 +110,33 @@ const Places = (props) => {
               <h3>Posted by</h3>
               <p>{placeList.user ? placeList.user : "Unknown"}</p>
             </div> */}
-              <div className="addReviewFavoriteBtns">
+              <div className="placeButtons">
                 <AddReview placeId={placeList._id} userId={props.userId} />
                 <AddFavorite placeId={placeList._id} userId={props.userId} />
 
                 {/* <Button onClick={() => props.setDeleteId(placeList._id)}>Delete</Button>           */}
+                {/* <button onClick={() => delPost(placeList._id)}>del3</button>  */}
+                {/* <Button onClick={() => props.setPlaceUpdateId(placeList._id)}>Edit</Button>   */}
 
-                {/* <Button onClick={() => props.setUpdateId(placeList._id)}>Edit</Button>   */}
+                <Button
+                  colorScheme="pink"
+                  onClick={() => {
+                    props.setPlaceUpdateId(placeList._id);
+                  }}
+                >
+                  edit
+                </Button>
+
+                <Button
+                  colorScheme="pink"
+                  onClick={() => {
+                    delPost(placeList._id);
+                  }}
+                >
+                  delete
+                </Button>
               </div>
-            
-            
-            
-            
+            </div>
             </div>
           );
         })}
