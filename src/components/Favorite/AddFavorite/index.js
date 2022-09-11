@@ -32,7 +32,7 @@ const AddFavorite = (props) => {
 
     return (
         <Button
-          colorScheme="pink"
+          colorScheme="orange"
           onClick={() => {
             addFav();
           }}

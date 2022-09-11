@@ -5,9 +5,19 @@
     align-items: center;
 }
 
+.title {
+    font-size: 3rem;
+    padding: .5em;
+    margin: .5em;
+    border: 8px solid orange;
+    width: 440px;
+    text-align: center;
+    border-radius: 8px;
+    color: #03045e;
+}
 .place {
-    border: 8px solid #03045e;
-    border-radius: 1em;
+    border: 7px solid #0d2a55;
+    border-radius: 5px;
     background-color: #0077b6;
     color: #caf0f8;
     margin: 1em;
@@ -16,8 +26,66 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    letter-spacing: .5px;
+}
+.placeName {
+    font-size: 1.75rem;
+    color: #0077b6;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: white;
+    font-weight: bold;
+    padding: .5em;
+}
+.address {
+    /* border: 3px solid #00b2ca; */
+    padding: 1em;
+    color: white;
+    background-color: #4094c2;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.35em;
+}
+.placeInfo {
+    margin: 1em;
 }
 
+.tagsLabel {
+    letter-spacing: .25px;
+    color: #f4deb3;
+    padding-top: 1em;
+}
+.tags {
+    display: flex;
+    gap: 5px;
+}
+
+.tag {
+    padding: .05px;
+    color: #f4deb3;
+}
+
+.favCount {
+    display: flex;
+    gap: 5px;
+}
+
+.favCounter{
+    color: #eea56c;
+    padding: .25em;
+    font-size: 1.15rem;
+}
+
+.reviewText {
+    color: white;
+    padding: .5em;
+}
+
+.heart {
+    color: #f4deb3;
+    font-size: 1.25rem;
+}
 
 .placeButtons {
     display: inline-flex;
@@ -27,54 +95,8 @@
     gap: 20px;
 }
 
-.address {
-    /* border: 3px solid #00b2ca; */
-    padding: 1em;
-    color: white;
-    border-radius: .5em;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.35em;
-}
 
-.placeName {
-    font-size: 1.75rem;
-    color: #0077b6;
-    /* border: 3px solid #03045e; */
-    border-radius: .1em;
-    background-color: white;
-    font-weight: bold;
+.addPlaceTitle {
+    font-size: 3em;
     padding: .5em;
-}
-
-.tags {
-    display: flex;
-    gap: 5px;
-}
-
-.tag {
-    padding: .05px;
-    color: #03045e;
-}
-
-.favCount {
-    display: flex;
-    gap: 5px;
-}
-
-.favCounter, .reviewText {
-    color: #d5edf2;
-    padding: .25em;
-    font-size: 1.15rem;
-    }
-
-.tagsLabel {
-    letter-spacing: .25px;
-    color: white;
-    padding-top: 1em;
-}
-
-
-.placeInfo {
-    margin: 1em;
 }

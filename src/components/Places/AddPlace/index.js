@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Tagify from "@yaireo/tagify";
 import NavBar from "../../NavBar";
 
 const AddPlace = (props) => {
@@ -12,10 +11,11 @@ const AddPlace = (props) => {
     city: "",
     state: "",
     zip: "",
+    tags: [""],
     user: `${fakeUserId}`,
   });
 
-  const [tagFormData, setTagFormData] = useState("");
+  // const [tagFormData, setTagFormData] = useState("");
 
   const handleChange = (event) => {
     setPlaceFormData({
@@ -24,15 +24,15 @@ const AddPlace = (props) => {
     });
   };
 
-  const input = document.querySelector("input[name=placeTags]");
-  new Tagify(input);
+  // const input = document.querySelector("input[name=placeTags]");
+  // new Tagify(input);
 
-  const handleTagChange = (e) => {
-    setTagFormData({
-      tagFormData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  // const handleTagChange = (e) => {
+  //   setTagFormData({
+  //     tagFormData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ const AddPlace = (props) => {
         state: placeFormData.placeState,
         zip: placeFormData.placeZip,
       },
-      tags: [tagFormData.placeTags],
+      tags: [placeFormData.placeTags],
       user: `${fakeUserId}`,
     });
     console.log(response);
@@ -54,7 +54,9 @@ const AddPlace = (props) => {
   return (
     <div className="addPlace">
       <NavBar />
-      <h1>Add a Place</h1>
+      <h1 className="addPlaceTitle">Add a Place</h1>
+
+      <div className="addPlaceForm">
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="placeName">Name:</label>
@@ -77,62 +79,29 @@ const AddPlace = (props) => {
           <input name="placeZip" id="placeZip" onChange={handleChange} />
         </div>
         <div>
-          <label htmlFor="placeTags">Tags:</label>
+        <label htmlFor="placeTags">
+          Tags:
+        </label>
+        <input
+          className="input"
+          name="placeTags"
+          id="placeTags"
+          onChange={handleChange}
+        />
 
-          <input
-            name="placeTags"
-            id="placeTags"
-            onChange={handleTagChange}
-          ></input>
-        </div>
+</div>
+
+
+
+
         <div>
           <input className="submitButton" type="submit" />
         </div>
       </form>
+      </div>
     </div>
   );
 };
 
 export default AddPlace;
 
-// var tagify = new Tagify(input);
-// var formElm = document.forms[0]; // just an example
-
-// function onTagifyKeyDown(input){
-//   if(
-//       !tagify.state.inputText &&  // assuming user is not in the middle oy adding a tag
-//       !tagify.state.editing       // user not editing a tag
-//     ){
-//     setTimeout(() => input.submit())  // put some buffer to make sure tagify has done with whatever, to be on the safe-side
-//   }
-// }
-// tagify.on("keydown", onTagifyKeyDown);
-
-// const input = {
-//   if (
-//     !tagify.state.inputText && // assuming user is not in the middle oy adding a tag
-//     !tagify.state.editing // user not editing a tag
-//   ) {
-//     setTimeout(() => document.querySelector("input[name=placeTags]")); // put some buffer to make sure tagify has done with whatever, to be on the safe-side
-//   }
-// }
-
-//     const onChange = useCallback((e) => {
-//   console.log("CHANGED:"
-//     , e.detail.tagify.value // Array where each tag includes tagify's (needed) extra properties
-//     , e.detail.tagify.getCleanValue()) // Same as above, without the extra properties
-//     , e.detail.value // a string representing the tags
-//   )
-// }, [])
-
-// if (
-//   e.key == "Enter" &&
-//   !tagify.state.inputText && // assuming user is not in the middle oy adding a tag
-//   !tagify.state.editing // user not editing a tag
-// ) {
-//   setTagFormData({
-//     tagFormData,
-//     [e.target.name]: e.target.value,
-//   });
-// }
-//   }

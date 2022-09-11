@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import NavBar from '../../NavBar';
 
 const UpdatePlace = (props) => {
 
@@ -62,7 +63,7 @@ const UpdatePlace = (props) => {
             {place?.map((place, index) => {    
                 return (
                     <div>        
-       
+                        <NavBar />
                         <h1>Update {place.name}</h1>
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="placeName">Name:</label>

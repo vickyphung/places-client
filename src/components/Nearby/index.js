@@ -1,14 +1,13 @@
-import NavBar from '../NavBar';
+import NavBar from "../NavBar";
 
-import TextSearch from './TextSearch';
-import './style.css'
+import TextSearch from "./TextSearch";
+import "./style.css";
 const Nearby = (props) => {
-
   // const [lat, setLat] = useState([]);
   // const setLatAndLink = (lat) => {
   //     setLat(lat)
   // }
-  
+
   // const [lon, setLon] = useState([]);
   // const setLonAndLink = (lon) => {
   //     setLon(lon)
@@ -16,12 +15,21 @@ const Nearby = (props) => {
 
   return (
     <div>
-            <NavBar />
-            Google Places API Search to search and add Places to the database
-            <TextSearch /> 
+      <NavBar />
+      <div className="googlePlaceSearch">
+       <div className="googleSearchInfo">
+        <p>
+          Use Google Maps Places API to search for Places</p>
+      <p> User can add a Place to the database from search results.
+       
+     </p>
+        <p>Search by Name, Location, Type, and/or Keyword.</p>
+        <p>See Name, Address, Hours, Phone, Rating, and Google Reviews.</p>
+        </div>
+        <TextSearch />
+      </div>
 
-
-            {/* Places Database Search
+      {/* Places Database Search
             <form>Tag Search
               <input></input>
             </form>       
@@ -31,9 +39,8 @@ const Nearby = (props) => {
             <form>Zipcode Search
               <input></input>
             </form>    */}
-
     </div>
-  )
-}
+  );
+};
 
 export default Nearby;

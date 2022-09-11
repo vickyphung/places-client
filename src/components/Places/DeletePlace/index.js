@@ -26,7 +26,8 @@ const DeletePlace = (props) => {
 
     return (
         <div>
-        <h1>Delete Place</h1>
+          <NavBar />
+        <h1>Deleted Place</h1>
         </div>
     )
 

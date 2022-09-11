@@ -57,7 +57,7 @@ const Places = (props) => {
         {console.log(places)}
         <NavBar />
         <h1>
-          <span className="title">places to go in the DMV</span>
+          <p className="title">places</p>
         </h1>
         {places?.map((placeList, index) => {
           return (
@@ -73,70 +73,70 @@ const Places = (props) => {
                 <p>{placeList.location.zip}</p>
               </div>
 
+              <div className="placeInfo">
+                <div className="tags">
+                  {placeList?.tags?.map((tag, index) => {
+                    return (
+                      <div key={index} className="tag">
+                        {tag}
+                      </div>
+                    );
+                  })}
+                </div>
 
+                <div className="favCount">
+                  <p>
+                    <span className="favCounter">
+                      <span className="heart">♡ </span>
+                      {placeList.favorites}
+                    </span>
+                  </p>
+                </div>
 
-            <div className="placeInfo">
-
-              <div className="tags">
-                {placeList?.tags?.map((tag, index) => {
-                  return (
-                    <div key={index} className="tag">
-                      <p className="reviewText"> {tag}</p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="favCount">
-                <p>
-                  <span className="favCounter">♡ {placeList.favorites}</span>
-                </p>
-              </div>
-
-              <div>
-                <h3 className="tagsLabel">Reviews:</h3>
-                {placeList?.reviews?.map((review, index) => {
-                  return (
-                    <div key={index} id="reviews-list">
-                      <p className="reviewText">∙{review.review}</p>
-                      {/* <h3 className="tagsLabel">Posted by:</h3>{" "}
+                <div>
+                  <h3 className="tagsLabel">Reviews:</h3>
+                  {placeList?.reviews?.map((review, index) => {
+                    return (
+                      <div key={index} id="reviews-list">
+                        <p className="reviewText">∙{review.review}</p>
+                        {/* <h3 className="tagsLabel">Posted by:</h3>{" "}
                       <p className="reviewText">{review.user}</p> */}
-                    </div>
-                  );
-                })}
-              </div>
+                      </div>
+                    );
+                  })}
+                </div>
 
-              {/* <div>
+                {/* <div>
               <h3>Posted by</h3>
               <p>{placeList.user ? placeList.user : "Unknown"}</p>
             </div> */}
-              <div className="placeButtons">
-                <AddReview placeId={placeList._id} userId={props.userId} />
-                <AddFavorite placeId={placeList._id} userId={props.userId} />
+                <div className="placeButtons">
+                  <AddReview placeId={placeList._id} userId={props.userId} />
+                  <AddFavorite placeId={placeList._id} userId={props.userId} />
 
-                {/* <Button onClick={() => props.setDeleteId(placeList._id)}>Delete</Button>           */}
-                {/* <button onClick={() => delPost(placeList._id)}>del3</button>  */}
-                {/* <Button onClick={() => props.setPlaceUpdateId(placeList._id)}>Edit</Button>   */}
+                  {/* <Button onClick={() => props.setDeleteId(placeList._id)}>Delete</Button>           */}
+                  {/* <button onClick={() => delPost(placeList._id)}>del3</button>  */}
+                  {/* <Button onClick={() => props.setPlaceUpdateId(placeList._id)}>Edit</Button>   */}
 
-                <Button
-                  colorScheme="pink"
-                  onClick={() => {
-                    props.setPlaceUpdateId(placeList._id);
-                  }}
-                >
-                  edit
-                </Button>
+                  <Button
+                    colorScheme="orange"
+                    onClick={() => {
+                      props.setPlaceUpdateId(placeList._id);
+                    }}
+                  >
+                    edit
+                  </Button>
 
-                <Button
-                  colorScheme="pink"
-                  onClick={() => {
-                    delPost(placeList._id);
-                  }}
-                >
-                  delete
-                </Button>
+                  <Button
+                    colorScheme="orange"
+                    onClick={() => {
+                      delPost(placeList._id);
+                    }}
+                  >
+                    delete
+                  </Button>
+                </div>
               </div>
-            </div>
             </div>
           );
         })}

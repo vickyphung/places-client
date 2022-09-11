@@ -1,4 +1,4 @@
-.searchR.esults {
+.searchResults {
     border: 1px solid pink;
 }
 .placeTitle {
@@ -35,8 +35,16 @@ gap: .5rem;
     margin: .25rem;
 }
 
-.submitButton {
-    width: 500px;
-    color: white;
-    background-color: #F78104;
+.googlePlaceSearch {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.googleSearchInfo{
+    font-size: 1.15rem;
+    line-height: 40px;
 }

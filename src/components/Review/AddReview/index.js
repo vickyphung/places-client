@@ -53,7 +53,7 @@ const AddReview = (props) => {
 
     return (
       <div>
-          <Button colorScheme="pink" onClick={onOpen}>
+          <Button colorScheme="orange" onClick={onOpen}>
             + review
           </Button>
 

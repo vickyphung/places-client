@@ -8,25 +8,39 @@ label {
   padding: .5em;
   margin: 1em;
   width: 80px;
-  border: 2px solid rgb(60, 126, 126);
-  background-color: #005F60;
-  border-radius: 1em;
+  height: 48px;
+  border: 2px solid #0d2a55;
+  background-color: #0d2a55;
+  border-radius: 5px;
   color: white;
+  letter-spacing: .5px;
+  margin-left: auto;
+  margin-right: 5px;
+  margin-top: auto;
 }
 
 
 input {
-  border: 2px solid rgb(60, 126, 126);
-  border-radius: 1em;
+  border: 2px solid #0d2a55;
+  border-radius: 5px;
   width: 400px;
-  height: 40px;
+  height: 48px;
   color: white;
+  margin-bottom: 10px;
+
 }
+
+.submitButton {
+  width: 160px;
+  color: white;
+  background-color: #0d2a55;
+  margin-left: 12em;
+}
+
 
 .addPlace {
   display:  flex;
   flex-direction: column;
-  justify-content: left;
   align-items: center;
 }
 
@@ -46,9 +60,3 @@ input {
 }
 
 
-.title {
-  font-size: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import AddFromMaps from '../AddFromMaps'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import "./styles.css";
+import AddFromMaps from "../AddFromMaps";
+
 import {
   Button,
   Container,
@@ -11,7 +14,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 
 const PlaceDetails = (props) => {
@@ -21,118 +24,110 @@ const PlaceDetails = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isReviewOpen, onReviewOpen, onReviewClose } = useDisclosure();
 
-
   useEffect(() => {
-      const fetchData = async () => {
-    if (props.detailsId) {
-        const response = await axios.get(`http://localhost:8800/search/details/${props.detailsId}`       
+    const fetchData = async () => {
+      if (props.detailsId) {
+        const response = await axios.get(
+          `http://localhost:8800/search/details/${props.detailsId}`
         );
-      
         console.log(response);
         setDetails(response.data.result);
-
         const detailResponse = response.data.result;
-         setAddFromMap({
-            name: detailResponse.name,
-           address: detailResponse.address_components,
-           mapsId: detailResponse.place_id
-         });
+        setAddFromMap({
+          name: detailResponse.name,
+          address: detailResponse.address_components,
+          mapsId: detailResponse.place_id,
+        });
       }
-    }
-      fetchData();
-    }, [props.detailsId])
+    };
+    fetchData();
+  }, [props.detailsId]);
 
-    return (
-      <Container>
-        <div className="mapResults">
-          {console.log(details)}
+  return (
+    <Container>
+      <div className="mapResults">
+        {console.log(details)}
 
-          {/* <p>
+        {/* <p>
             <span className="placeName">{details.name}</span>
           </p>  */}
 
-          <p>{details.business_status}</p>
+        <p>{details.business_status}</p>
 
-          {details?.address_components?.map((result, index) => {
-            return (
-              <div key={index} className="category">
-                {result.short_name}
-              </div>
-            );
-          })}
+        {details?.address_components?.map((result, index) => {
+          return (
+            <div key={index} className="category">
+              {result.short_name}
+            </div>
+          );
+        })}
+        <span className="subtitle">Phone:</span>
 
-          <p>{details.formatted_phone_number}</p>
+        <p>{details.formatted_phone_number}</p>
+        <span className="subtitle">Hours:</span>
+        {details?.opening_hours?.weekday_text?.map((text, index) => {
+          return (
+            <div key={index} className="category">
+              <p>{text}</p>
+            </div>
+          );
+        })}
 
-          {details?.opening_hours?.weekday_text?.map((text, index) => {
-            return (
-              <div key={index} className="category">
-                <p>{text}</p>
-              </div>
-            );
-          })}
+        {details?.types?.map((type, index) => {
+          return (
+            <div key={index} className="category">
+              <p>
+                <span className="subtitle">Type:</span> {type}
+              </p>
+            </div>
+          );
+        })}
 
-          {details?.types?.map((type, index) => {
-            return (
-              <div key={index} className="category">
-                <p>{type}</p>
-              </div>
-            );
-          })}
+        <span className="subtitle">Site: </span>
+        <p>
+          <a href={details.website} className="siteLink">
+            {details.website}
+          </a>
+        </p>
+        <p>
+          <span className="subtitle">Rating:</span> {details.rating}
+        </p>
 
-          <p>{details.website}</p>
-          <p>{details.rating}</p>
+        <span className="subtitle">Reviews: </span>
 
-          <Button onClick={onOpen}>Open Modal</Button>
+        {details?.reviews?.map((review, index) => {
+          return (
+            <div key={index} className="category">
+              <p>{review.text}</p>
+              <p>{review.author_url}</p>
+            </div>
+          );
+        })}
 
-          <Modal isOpen={isOpen} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent>
-              <ModalHeader>Modal Title</ModalHeader>
-              <ModalCloseButton />
-              
-              <ModalBody>
-                {details?.reviews?.map((review, index) => {
-                  return (
-                    <div key={index} className="category">
-                      <p>{review.text}</p>
-                      <p>{review.author_url}</p>
-                    </div>
-                  );
-                })}
-              </ModalBody>
+        <Button onClick={onOpen}>Add To Places</Button>
 
-              <ModalFooter>
-                <Button colorScheme="blue" mr={3} onClick={onClose}>
-                  Close
-                </Button>
-                <Button variant="ghost">Secondary Action</Button>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Add To Places</ModalHeader>
+            <ModalCloseButton />
 
-          <Button onClick={onOpen}>Add To Places</Button>
+            <ModalBody>
+              <AddFromMaps postFormData={addFromMap.address}
+              // placeName={addFromMap.name}
+              />
+            </ModalBody>
 
-          <Modal isOpen={isOpen} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent>
-              <ModalHeader>Add To Places</ModalHeader>
-              <ModalCloseButton />
-             
-             
-              <ModalBody>
-                <AddFromMaps postFormData={addFromMap.address} />
-              </ModalBody>
-
-              <ModalFooter>
-                <Button colorScheme="blue" mr={3} onClick={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
-        </div>
-      </Container>
-    );
-  }
+            <ModalFooter>
+              <Button colorScheme="blue" mr={3} onClick={onClose}>
+                Close
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </div>
+    </Container>
+  );
+};
 
 export default PlaceDetails;

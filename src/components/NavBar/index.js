@@ -5,6 +5,10 @@ function NavBar() {
   return (
     <div className="navLinks">
       <Nav fill variant="tabs" defaultActiveKey="/home">
+
+      <Nav.Item>
+          <Nav.Link href="/">home</Nav.Link>
+        </Nav.Item>
         <Nav.Item>
           <Nav.Link href="/places">places</Nav.Link>
         </Nav.Item>

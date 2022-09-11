@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PlaceDetails from '../PlaceDetails';
 import { Container } from "@chakra-ui/react";
-
+import './styles.css'
 
 const TextSearch = (props) => {
 
@@ -21,17 +21,22 @@ const TextSearch = (props) => {
     }
 
   return (
-    <div>
-      <h1>Text Search</h1>
+    <div className='googleTextSearch'>
+      {/* <h1>Text Search</h1> */}
+      
       <form className="searchForm" onSubmit={handleSubmit}>
-        <input
-          className="searchInput"
-          name="query"
-          id="query"
-          placeholder="arts and culture in alexandria, va"
-          onChange={handleChange}
-        />
-        <input className="submitBtn" type="submit" value="🔍" />
+        <div>
+          <input
+            className="searchInput"
+            name="query"
+            id="query"
+            placeholder="  arts and culture in alexandria, va"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+        <input className="submit" type="submit" value="🔍Search" />
+        </div>
       </form>
       <hr></hr>
       {console.log(results)}

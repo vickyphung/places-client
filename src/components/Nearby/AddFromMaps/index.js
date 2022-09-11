@@ -1,43 +1,30 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-import {
-  Button,
-
-} from "@chakra-ui/react";
-
-
+import React, { useState, useEffect } from "react";
+import { Button } from "@chakra-ui/react";
 
 const AddFromMaps = (props) => {
 
+const [userId, setUserId] = useState([]);
 
- const [userId, setUserId] = useState([]);
-
- useEffect(() => {
-   const fetchId = async () => {
-     const response = await axios.get(
-       `http://localhost:8800/user/id`,
-
-       {
-         headers: {
-           "JWT-Token": localStorage.jwtToken,
-         },
-       }
-     );
-     console.log(response);
-     setUserId(response.data.user[0]._id);
-     console.log(response.data.user[0]._id);
-
-   };
-   fetchId();
- }, []);
+useEffect(() => {
+  const fetchId = async () => {
+    const response = await axios.get(
+      `http://localhost:8800/user/id`,
+      {
+        headers: {
+          "JWT-Token": localStorage.jwtToken,
+        },
+      }
+    );
+    console.log(response);
+    setUserId(response.data.user[0]._id);
+    console.log(response.data.user[0]._id);
+  };
+  fetchId();
+}, []);
 
 
-
-
-
-
-    let fakeUserId = "62bbf966c4c434b12444023d";
+let fakeUserId = "62bbf966c4c434b12444023d";
 
   const [placeFormData, setPlaceFormData] = useState({
     name: "",
@@ -60,11 +47,12 @@ const AddFromMaps = (props) => {
     event.preventDefault();
     const response = await axios.post("http://localhost:8800/places/add", {
       name: placeFormData.name,
+      // name:  `${props.placeName.name}`,
       location: {
         street: `${props.postFormData[0].short_name} ${props.postFormData[1].short_name}`,
         city: `${props.postFormData[3].short_name}`,
         state: `${props.postFormData[4].short_name}`,
-        // zip: `${props.postFormData[6].short_name}`,
+        zip: `${props.postFormData[6].short_name}`,
       },
       tags: [placeFormData.placeTags],
       user: `${fakeUserId}`
