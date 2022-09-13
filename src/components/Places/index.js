@@ -4,8 +4,6 @@ import "./style.css";
 import AddReview from "../Review/AddReview";
 import AddFavorite from "../Favorite/AddFavorite";
 
-import { Button } from "@chakra-ui/react";
-
 import NavBar from "../NavBar";
 
 const Places = (props) => {

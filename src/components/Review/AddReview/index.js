@@ -91,6 +91,7 @@ const AddReview = (props) => {
             </ModalContent>
           </Modal>
         </Stack>
+        {console.log(response)}
       </div>
     );
 }

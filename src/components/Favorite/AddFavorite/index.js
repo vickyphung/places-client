@@ -31,6 +31,7 @@ const AddFavorite = (props) => {
     };
 
     return (
+      <div>
         <button
           onClick={() => {
             addFav();
@@ -38,8 +39,9 @@ const AddFavorite = (props) => {
         >
           + like
         </button>
-        // {/* <p className="actionMsg">{data.message}</p> */}
-        // {console.log(data.message)}
+ 
+         {console.log(data.message)}
+        </div>
     );
   }
 };
