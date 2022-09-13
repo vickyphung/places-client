@@ -24,7 +24,7 @@ const navigate = useNavigate();
     });
     console.log(response);
     setData(response.data)
-   { navigate('/user')}
+    navigate('/user')
     }
 
     return(

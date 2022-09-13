@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import "./styles.css";
 import AddFromMaps from "../AddFromMaps";
@@ -22,7 +22,7 @@ const PlaceDetails = (props) => {
   const [details, setDetails] = useState([]);
   const [addFromMap, setAddFromMap] = useState({});
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isReviewOpen, onReviewOpen, onReviewClose } = useDisclosure();
+  // const { isReviewOpen, onReviewOpen, onReviewClose } = useDisclosure();
 
   useEffect(() => {
     const fetchData = async () => {

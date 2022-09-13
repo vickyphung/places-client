@@ -8,8 +8,8 @@ import UpdatePlace from './components/Places/UpdatePlace';
 import User from './components/User';
 import DeleteUser from './components/User/DeleteUser';
 import UpdateUser from './components/User/UpdateUser';
-import UserLogin from './components/Login/UserLogin';
-import CreateUser from "./components/Login/CreateUser";
+// import UserLogin from './components/Login/UserLogin';
+// import CreateUser from "./components/Login/CreateUser";
 import Login from './components/Login/index';
 import Home from './components/Home';
 import AddReview from './components/Review/AddReview';
@@ -55,10 +55,10 @@ function App(props) {
 
 
 
-  const setRemoveFavoriteIdAndLink = (favorite) => {
-    setFavoriteId(favorite)
-    navigate('/favorite/delete')
-  }
+  // const setRemoveFavoriteIdAndLink = (favorite) => {
+  //   setFavoriteId(favorite)
+  //   navigate('/favorite/delete')
+  // }
 
   const [reviewId, setReviewId] = useState([]);
 

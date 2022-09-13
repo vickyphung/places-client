@@ -1,6 +1,6 @@
 import NavBar from "../NavBar";
 // import Login from "../Login/"
-import Places from "../Places"
+// import Places from "../Places"
 import './styles.css'
 
 

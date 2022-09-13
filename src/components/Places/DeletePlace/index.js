@@ -31,11 +31,6 @@ const DeletePlace = (props) => {
         </div>
     )
 
-
-return (
-  <NavBar />
-)
-
   }
 
 export default DeletePlace;

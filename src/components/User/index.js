@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import UpdateReview from '../Review/UpdateReview';
-import DeleteReview from "../Review/DeleteReview";
+// import DeleteReview from "../Review/DeleteReview";
 import NavBar from '../NavBar';
 import './style.css'
 

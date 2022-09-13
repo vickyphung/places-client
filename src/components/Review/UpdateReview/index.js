@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const UpdateReview = (props) => {
@@ -6,7 +6,7 @@ const UpdateReview = (props) => {
     console.log("Made it to Update Review Component")
     console.log(props.reviewId)
 
-    const [reviews, setReviews] = useState([]);
+    // const [reviews, setReviews] = useState([]);
 
     // useEffect(() => {
     //   const fetchData = async () => {

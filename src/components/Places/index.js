@@ -25,9 +25,9 @@ const Places = (props) => {
   console.log("PINKY!");
   console.log(props.userId);
 
-  const fakeUserId = "62b5153a18a020243c4bb4a0";
+  // const fakeUserId = "62b5153a18a020243c4bb4a0";
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {

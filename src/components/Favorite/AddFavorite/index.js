@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { Button, ButtonGroup, WrapItem } from "@chakra-ui/react";
+import { Button} from "@chakra-ui/react";
 
 const AddFavorite = (props) => {
   console.log("Made it to the Add Favorite Component");
