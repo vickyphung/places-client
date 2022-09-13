@@ -45,7 +45,7 @@ let fakeUserId = "62bbf966c4c434b12444023d";
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post("http://localhost:8800/places/add", {
+    const response = await axios.post("https://placeswithbear.herokuapp.com/places/add", {
       name: placeFormData.name,
       // name:  `${props.placeName.name}`,
       location: {

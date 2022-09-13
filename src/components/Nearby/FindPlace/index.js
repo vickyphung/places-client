@@ -14,7 +14,7 @@ const FindPlace = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await axios.get(
-      `http://localhost:8800/search/findplace/${formData}`
+      `https://placeswithbear.herokuapp.com/findplace/${formData}`
     );
     console.log(response);
     setResults(response.data.candidates);

@@ -15,7 +15,7 @@ const TextSearch = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const response = await axios.get(`http://localhost:8800/search/textSearch/${formData}`)
+        const response = await axios.get(`https://placeswithbear.herokuapp.com/search/textSearch/${formData}`)
         console.log(response);
         setResults(response.data.results);
     }
