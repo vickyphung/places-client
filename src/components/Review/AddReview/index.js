@@ -38,7 +38,7 @@ const AddReview = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const response = await axios.post(`http://localhost:8800/review/`, {
+        const response = await axios.post(`https://placeswithbear.herokuapp.com/review/`, {
           // user: `${props.userId}`,
           user: `${fakeUserId}`,
 

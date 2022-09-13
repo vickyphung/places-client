@@ -3,12 +3,9 @@ font-size: 2rem;
 margin-top: 1em;
 }
 
-
 .credit {
 font-size: 1rem;
-margin-top: 5em;
 }
-
 
 .placesTG {
 color: #5b6efd;
@@ -26,7 +23,6 @@ font-weight: bold;
     align-items: center;
     justify-content: center;
 }
-
 
 .siteName {
     font-size: 1.75rem;

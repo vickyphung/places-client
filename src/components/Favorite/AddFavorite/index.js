@@ -24,7 +24,7 @@ const AddFavorite = (props) => {
     // useEffect(() => {
     const addFav = async () => {
       const response = await axios.put(
-        `http://localhost:8800/user/favorite/put/${fakeUserId}/${props.placeId}`
+        `https://placeswithbear.herokuapp.com/user/favorite/put/${fakeUserId}/${props.placeId}`
       );
       console.log(response);
       setData(response.data);
