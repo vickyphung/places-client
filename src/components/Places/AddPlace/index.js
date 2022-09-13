@@ -56,8 +56,9 @@ const AddPlace = (props) => {
       <NavBar />
       <h1 className="addPlaceTitle">Add a Place</h1>
 
-      <div className="addPlaceForm">
       <form onSubmit={handleSubmit}>
+      <div className="addPlaceForm">
+
         <div>
           <label htmlFor="placeName">Name:</label>
           <input name="placeName" id="placeName" onChange={handleChange} />
@@ -97,8 +98,9 @@ const AddPlace = (props) => {
         <div>
           <input className="submitButton" type="submit" />
         </div>
-      </form>
       </div>
+
+      </form>
     </div>
   );
 };

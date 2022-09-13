@@ -3,7 +3,7 @@ import axios from "axios";
 import "./style.css";
 import AddReview from "../Review/AddReview";
 import AddFavorite from "../Favorite/AddFavorite";
-
+import { Container } from "@chakra-ui/react";
 import NavBar from "../NavBar";
 
 const Places = (props) => {
@@ -18,7 +18,9 @@ const Places = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       // const response = await axios.get("http://localhost:8800/places");
-      const response = await axios.get("https://placeswithbear.herokuapp.com/places");
+      const response = await axios.get(
+        "https://placeswithbear.herokuapp.com/places"
+      );
 
       // , {
       //   headers: {
@@ -38,13 +40,25 @@ const Places = (props) => {
   };
 
   return (
-
+    <Container>
+      {" "}
       <div className="placeList">
         {console.log(places)}
         <NavBar />
-        <h1>
-          <p className="title">places</p>
-        </h1>
+        {/* <h1>
+          <p className="title">Places</p>
+        </h1> */}
+
+        <div className="siteName">
+          <p className="bold">free</p>
+          <p className="placesTG">places to go</p>
+          <p>
+            in the <span className="bold">DMV</span>
+          </p>
+
+          <p className="credit">© pinkybear | vicky@vicky.wtf</p>
+        </div>
+
         {places?.map((placeList, index) => {
           return (
             <div className="place" key={index}>
@@ -124,9 +138,8 @@ const Places = (props) => {
             </div>
           );
         })}
-  
       </div>
-
+    </Container>
   );
 };
 

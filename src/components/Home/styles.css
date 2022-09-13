@@ -1,20 +1,24 @@
 .click {
-font-size: 2rem;
-margin-top: 1em;
+    font-size: 2rem;
+    margin-top: 1em;
 }
 
 .credit {
-font-size: 1rem;
+    font-size: 1rem;
+    margin: -.01em;
 }
 
 .placesTG {
-color: #5b6efd;
-font-size: 2.5rem;
-text-decoration: underline;
+    color: #5b6efd;
+    font-size: 2.5rem;
+    text-decoration: underline;
+    margin-top: -1em;
+    margin-bottom: -.5em
 }
 
 .bold {
-font-weight: bold;
+    font-weight: bold;
+    font-size: 1.25em;
 }
 
 .home {
@@ -31,8 +35,9 @@ font-weight: bold;
     gap: .25rem;
     border: 8px solid orange;
     border-radius: 8px;
-    padding: 2em;
+    padding: .75em;
     justify-content: center;
     align-items: center;
     width: 400px;
+    margin: 1em;
 }
