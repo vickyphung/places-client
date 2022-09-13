@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Button} from "@chakra-ui/react";
+
 
 const AddFavorite = (props) => {
   console.log("Made it to the Add Favorite Component");
@@ -31,14 +31,13 @@ const AddFavorite = (props) => {
     };
 
     return (
-        <Button
-          colorScheme="orange"
+        <button
           onClick={() => {
             addFav();
           }}
         >
           + like
-        </Button>
+        </button>
         // {/* <p className="actionMsg">{data.message}</p> */}
         // {console.log(data.message)}
     );

@@ -3,22 +3,9 @@ import axios from "axios";
 import "./style.css";
 import AddReview from "../Review/AddReview";
 import AddFavorite from "../Favorite/AddFavorite";
-// import {
-//   Divider,
-//   Button
-//   // Modal,
-//   // ModalOverlay,
-//   // ModalContent,
-//   // ModalHeader,
-//   // ModalFooter,
-//   // ModalBody,
-//   // ModalCloseButton,
-//   // useDisclosure,
-// } from "@chakra-ui/react";
 
-import { Button, Divider } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
-import Container from "react-bootstrap/esm/Container";
 import NavBar from "../NavBar";
 
 const Places = (props) => {
@@ -53,7 +40,7 @@ const Places = (props) => {
   };
 
   return (
-    <Container>
+
       <div className="placeList">
         {console.log(places)}
         <NavBar />
@@ -119,31 +106,29 @@ const Places = (props) => {
                   {/* <button onClick={() => delPost(placeList._id)}>del3</button>  */}
                   {/* <Button onClick={() => props.setPlaceUpdateId(placeList._id)}>Edit</Button>   */}
 
-                  <Button
-                    colorScheme="orange"
+                  <button
                     onClick={() => {
                       props.setPlaceUpdateId(placeList._id);
                     }}
                   >
                     edit
-                  </Button>
+                  </button>
 
-                  <Button
-                    colorScheme="orange"
+                  <button
                     onClick={() => {
                       delPost(placeList._id);
                     }}
                   >
                     delete
-                  </Button>
+                  </button>
                 </div>
               </div>
             </div>
           );
         })}
-        <Divider orientation="horizontal" />
+  
       </div>
-    </Container>
+
   );
 };
 

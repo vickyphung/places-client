@@ -53,9 +53,9 @@ const AddReview = (props) => {
 
     return (
       <div>
-          <Button colorScheme="orange" onClick={onOpen}>
+          <button onClick={onOpen}>
             + review
-          </Button>
+          </button>
 
         <Stack direction="row" spacing={4}>
           <Modal isOpen={isOpen} onClose={onClose}>

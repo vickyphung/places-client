@@ -1,42 +1,21 @@
 import "./style.css";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <div className="navLinks">
-      <Nav fill variant="tabs" defaultActiveKey="/home">
+      <Link to="/">home</Link>
+      <Link to="/places">places</Link>
 
-      <Nav.Item>
-          <Nav.Link href="/">home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/places">places</Nav.Link>
-        </Nav.Item>
+      {/* <Link to="/login">login</Link>
+                    <Link to="/places">places</Link> */}
 
-        {/* <Nav.Item>
-                    <Nav.Link href="/login">login</Nav.Link>
-                </Nav.Item> */}
+      <Link to="/places/add">add place manually</Link>
 
-        {/* <Nav.Item>
-                    <Nav.Link href="/places">places</Nav.Link>
-                </Nav.Item> */}
+      {/* <Link to="/reviews">reviews</Link>
+                    <Link to="/user">user</Link> */}
 
-        <Nav.Item>
-          <Nav.Link href="/places/add">add place manually</Nav.Link>
-        </Nav.Item>
-
-        {/* <Nav.Item>
-                    <Nav.Link href="/reviews">reviews</Nav.Link>
-                </Nav.Item> */}
-        {/* 
-                <Nav.Item>
-                    <Nav.Link href="/user">user</Nav.Link>
-                </Nav.Item> */}
-
-        <Nav.Item>
-          <Nav.Link href="/search">search</Nav.Link>
-        </Nav.Item>
-      </Nav>
+      <Link to="/search">search</Link>
     </div>
   );
 }
