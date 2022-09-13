@@ -2,6 +2,7 @@ import NavBar from "../NavBar";
 // import Login from "../Login/"
 // import Places from "../Places"
 import './styles.css'
+import { Link } from "react-router-dom";
 
 
 function Home (props){
@@ -15,7 +16,7 @@ function Home (props){
         <div className="siteName"> 
           <p className="bold">free</p>
           <p className="placesTG"> 
-            <a className="placesTG" href="/places">places to go</a>
+            <Link className="placesTG" to="/places">places to go</Link>
           </p>
          <p>in the <span className="bold">DMV</span></p>
          
