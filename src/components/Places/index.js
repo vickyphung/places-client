@@ -51,7 +51,9 @@ const Places = (props) => {
 
         <div className="siteName">
           <p className="bold">free</p>
-          <p className="placesTG">places to go</p>
+          <Link className="placesTG" to="/places">
+            places to go
+          </Link>
           <p>
             in the <span className="bold">DMV</span>
           </p>
