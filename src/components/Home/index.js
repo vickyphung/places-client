@@ -22,7 +22,6 @@ function Home(props) {
         <p>
           in the <span className="bold">DMV</span>
         </p>
-        <p className="credit">powered by: Google Places API</p>
         <p className="credit">© pinkybear | vicky@vicky.wtf</p>
       </div>
     </div>
