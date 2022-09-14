@@ -159,3 +159,8 @@ button:hover {
     background-color: white;
     color: #4094c2;
 }
+
+
+.deletePlaceBtn {
+    color: #4094c2;
+}

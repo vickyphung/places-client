@@ -129,6 +129,7 @@ const Places = (props) => {
                   </button>
 
                   <button
+                    className="deletePlaceBtn"
                     onClick={() => {
                       delPost(placeList._id);
                     }}
