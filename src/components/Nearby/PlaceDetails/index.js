@@ -48,10 +48,10 @@ const PlaceDetails = (props) => {
       <div className="mapResults">
         {console.log(details)}
 
-        {/* <p>
-            <span className="placeName">{details.name}</span>
-          </p>  */}
-
+      <a href={details.website} className="siteLink">
+        <span className="placeName">{details.name}</span>
+          </a>
+          
         <p>{details.business_status}</p>
 
         {details?.address_components?.map((result, index) => {
