@@ -128,7 +128,6 @@ label {
     border: 3px solid #0d2a55;
     background-color: #0d2a55;
     border-radius: 5px;
-    color: white;
     letter-spacing: .5px;
     margin-left: auto;
     margin-right: 5px;
@@ -141,7 +140,6 @@ input {
     border-radius: 5px;
     width: 400px;
     height: 48px;
-    color: white;
     margin-bottom: 10px;
 }
 
