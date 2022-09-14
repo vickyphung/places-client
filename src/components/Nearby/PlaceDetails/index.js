@@ -49,7 +49,7 @@ const PlaceDetails = (props) => {
         {console.log(details)}
 
       <a href={details.website} className="siteLink">
-        <span className="placeName">{details.name}</span>
+        <span className="placeName">{details.website}</span>
           </a>
           
         <p>{details.business_status}</p>
@@ -83,12 +83,6 @@ const PlaceDetails = (props) => {
           );
         })}
 
-        <span className="subtitle">Site: </span>
-        <p>
-          <a href={details.website} className="siteLink">
-            {details.website}
-          </a>
-        </p>
         <p>
           <span className="subtitle">Rating:</span> {details.rating}
         </p>
