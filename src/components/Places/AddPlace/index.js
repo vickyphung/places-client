@@ -36,7 +36,9 @@ const AddPlace = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("https://placeswithbear.herokuapp.com/places/add", {
+    // const response = await axios.post("https://placeswithbear.herokuapp.com/places/add", {
+      const response = await axios.post(`${process.env.BASEURL || 'localhost:3000'}/places/add`, {
+
       name: placeFormData.placeName,
       location: {
         street: placeFormData.placeStreet,
