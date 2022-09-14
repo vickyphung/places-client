@@ -52,7 +52,7 @@ let fakeUserId = "62bbf966c4c434b12444023d";
         street: `${props.postFormData[0].short_name} ${props.postFormData[1].short_name}`,
         city: `${props.postFormData[3].short_name}`,
         state: `${props.postFormData[4].short_name}`,
-        // zip: `${props.postFormData[6].short_name}`,
+        zip: `${props.postFormData[6].short_name}`,
       },
       tags: [placeFormData.placeTags],
       user: `${fakeUserId}`
