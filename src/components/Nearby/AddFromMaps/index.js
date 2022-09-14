@@ -62,7 +62,7 @@ let fakeUserId = "62bbf966c4c434b12444023d";
   };
 
   return (
-    <div className="addFromMapsForm">
+    <div className="addFromMaps">
       <form className="addFromMapsForm" onSubmit={handleSubmit}>
         <label className="nameLabel" htmlFor="placeName">
           Name:
