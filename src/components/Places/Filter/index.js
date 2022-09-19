@@ -6,7 +6,7 @@ import Name from "./Name";
 
 function Filter() {
   const [places, setPlaces] = useState([]);
-  const [results, setResults] = useState([]);
+
 
   const [formData, setFormData] = useState("");
 
@@ -23,6 +23,7 @@ function Filter() {
     );
     console.log(response);
     setPlaces(response.data.results);
+    console.log(places)
   };
 
 
@@ -52,7 +53,7 @@ function Filter() {
         </form>
       </div>
 
-
+{/* 
       <div>
         {places?.map((results, index) => {
           return (
@@ -61,7 +62,7 @@ function Filter() {
             </div>
           );
         })}
-      </div>
+      </div> */}
 
 
 

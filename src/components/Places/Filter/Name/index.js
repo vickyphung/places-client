@@ -19,6 +19,7 @@ function Name() {
         );
         console.log(response);
         setResults(response.data);
+        console.log(results)
       };
   return (
     <div>
