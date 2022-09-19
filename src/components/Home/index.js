@@ -24,7 +24,7 @@ function Home(props) {
         </p>
         <p className="credit">© pinkybear | vicky@vicky.wtf</p>
       </div>
-      <div>
+      <div className="info">
         <p>
           Users can view a database of Places to go in the DC, MD, and VA area. 
         </p>
