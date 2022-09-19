@@ -24,6 +24,17 @@ function Home(props) {
         </p>
         <p className="credit">© pinkybear | vicky@vicky.wtf</p>
       </div>
+      <div>
+        <p>
+          Users can view a database of Places to go in the DC, MD, and VA area. 
+        </p>
+        <p>Users can manually add a place to the database.</p>
+        <p>Users can also edit or delete a place. (User validation is still in development).</p>
+        <p>Users can search for places using Google Maps Places API.</p>
+        <p>Search Results will show detailed information, including operation status, phone number, link, address, hours, and google reviews.</p>
+        <p>Users can add a place to the database from the search resutls.</p>
+        <p>Users can filter through the Places database via State, Tag, or Name.</p>
+      </div>
     </div>
   );
 }

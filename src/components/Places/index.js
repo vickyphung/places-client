@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 import AddReview from "../Review/AddReview";
@@ -19,7 +20,7 @@ const Places = (props) => {
     const fetchData = async () => {
       // const response = await axios.get("http://localhost:8800/places");
       const response = await axios.get(
-        "https://placeswithbear.herokuapp.com/places"
+        ("https://placeswithbear.herokuapp.com/places" || "http://localhost:8800/places")
       );
 
       // , {
@@ -68,12 +69,17 @@ const Places = (props) => {
                 <h2>{placeList.name}</h2>
               </div>
 
-              <div className="address">
+
+          {console.log("Address Data Test")}
+          {console.log(placeList.location.street)}
+
+
+           <div className="address">
                 <p>{placeList.location.street}</p>
                 <p>{placeList.location.city}</p>
                 <p>{placeList.location.state}</p>
                 <p>{placeList.location.zip}</p>
-              </div>
+          </div>
 
               <div className="placeInfo">
                 <div className="tags">

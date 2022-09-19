@@ -96,84 +96,90 @@ router.get('/:type/:id', async (req, res) => {
 
 
 
+router.get("/all/tags", (req, res)=>{
+    place.find({}, {tags: 1, _id:0 }, (err, place)=>{
+        if(err){
+            res.status(404).json({message: "Could not find categories."})
+        } else {
+            res.status(200).json({categories: place})
+        }
+    })
+})
+
+router.get("/get/:state/:tag", (req, res)=>{
+    const state = req.params.state
+    const tag = req.params.tag
+    place.find()
+    .where('location.state').equals(state)  
+    .where('tags').equals(tag)  
+    .sort('name')
+    .exec
+    ((err, allPlaces)=>{
+        if(err){
+            res.status(404).json({message: "Error. No place data found."})
+        } else {
+            res.status(200).json({message: "places to go",
+            placesList: allPlaces})
+        }
+    })
+})
 
 
-import { Formik, Field } from "formik";
-import {
-  Box,
-  Button,
-  Checkbox,
-  Flex,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  Input,
-  VStack
-} from "@chakra-ui/react";
+router.get("/name/:name", (req, res)=>{
+    const name = req.params.name
+    place.findOne({name: name,}, (err, place)=>{
+        if(err){
+            res.status(404).json({message: "Could not find a place with that name."})
+        } else {
+            res.status(200).json(place)
+        }
+    })
+})
 
-export default function App() {
-  return (
-    <Flex bg="gray.100" align="center" justify="center" h="100vh">
-      <Box bg="white" p={6} rounded="md" w={64}>
-        <Formik
-          initialValues={{
-            email: "",
-            password: "",
-            rememberMe: false
-          }}
-          onSubmit={(values) => {
-            alert(JSON.stringify(values, null, 2));
-          }}
-        >
-          {({ handleSubmit, errors, touched }) => (
-            <form onSubmit={handleSubmit}>
-              <VStack spacing={4} align="flex-start">
-                <FormControl>
-                  <FormLabel htmlFor="email">Email Address</FormLabel>
-                  <Field
-                    as={Input}
-                    id="email"
-                    name="email"
-                    type="email"
-                    variant="filled"
-                  />
-                </FormControl>
-                <FormControl isInvalid={!!errors.password && touched.password}>
-                  <FormLabel htmlFor="password">Password</FormLabel>
-                  <Field
-                    as={Input}
-                    id="password"
-                    name="password"
-                    type="password"
-                    variant="filled"
-                    validate={(value) => {
-                      let error;
+router.get("/id/:placeId", (req, res)=>{
+    place.find({_id: req.params.placeId}, (err, place)=>{
+        if(err){
+            res.status(404).json({message: "Could not find a place with that Id."})
+        } else {
+            res.status(200).json(place)
+        }
+    })
+})
 
-                      if (value.length < 5) {
-                        error = "Password must contain at least 6 characters";
-                      }
+router.get("/tag/:tag", (req, res)=>{
+    place.find({tags: req.params.tag}, (err, place)=>{
+        if(err){
+            res.status(404).json({message: "Could not find places with that tag."})
+        } else {
+            res.status(200).json({places: place})
+        }
+    })
+})
 
-                      return error;
-                    }}
-                  />
-                  <FormErrorMessage>{errors.password}</FormErrorMessage>
-                </FormControl>
-                <Field
-                  as={Checkbox}
-                  id="rememberMe"
-                  name="rememberMe"
-                  colorScheme="purple"
-                >
-                  Remember me?
-                </Field>
-                <Button type="submit" colorScheme="purple" width="full">
-                  Login
-                </Button>
-              </VStack>
-            </form>
-          )}
-        </Formik>
-      </Box>
-    </Flex>
-  );
-}
+router.get("/city/:city", (req, res)=>{
+    const city = req.params.city
+    place.find({
+        "location.city": city
+    }, (err, place)=>{
+        if(err){
+            res.status(404).json({message: "Could not find places within that city."})
+        } else {
+            res.status(200).json({places: place})
+        }
+    })
+})
+
+router.get("/state/:state", (req, res)=>{
+    const state = req.params.state
+    place.find({  
+        "location.state": state
+    }, (err, place)=>{
+        if(err){
+            res.status(404).json({message: "Could not find places within that state."})
+        } else {
+            res.status(200).json({places: place})
+        }
+    })
+})
+
+

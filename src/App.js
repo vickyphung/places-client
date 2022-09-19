@@ -5,6 +5,7 @@ import './App.css';
 import AddPlace from './components/Places/AddPlace';
 import DeletePlace from './components/Places/DeletePlace';
 import UpdatePlace from './components/Places/UpdatePlace';
+import Filter from './components/Places/Filter';
 import User from './components/User';
 import DeleteUser from './components/User/DeleteUser';
 import UpdateUser from './components/User/UpdateUser';
@@ -135,6 +136,10 @@ function App(props) {
         />
 
         <Route path="/places/update" element={<UpdatePlace placeId={placeId} />} />
+
+
+        <Route path="/places/filter" element={<Filter />} />
+
 
 
         <Route path="/reviews/" element={<Review />} />

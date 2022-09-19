@@ -12,6 +12,9 @@ function NavBar() {
 
       <Link to="/places/add">Add Place</Link>
 
+      <Link to="/places/filter">Filter Places</Link>
+
+
       {/* <Link to="/reviews">reviews</Link>
                     <Link to="/user">user</Link> */}
 

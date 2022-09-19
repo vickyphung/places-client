@@ -8,7 +8,10 @@ const UpdatePlace = (props) => {
 
     useEffect(() => {
       const updatePlace = async () => {
-        const response = await axios.get(`http://localhost:8800/places/id/${props.placeId}`
+        // const response = await axios.get(`http://localhost:8800/places/id/${props.placeId}`
+
+        const response = await axios.get(`${'https://placeswithbear.herokuapp.com' || 'localhost:8800'}/places/id/${props.placeId}`, 
+
         
         //  , {
         //    headers: {
@@ -41,7 +44,16 @@ const UpdatePlace = (props) => {
 
     const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.put(`http://localhost:8800/places/update/${props.placeId}`, {
+    // const response = await axios.put(`http://localhost:8800/places/update/${props.placeId}`, {
+
+
+
+
+        const response = await axios.put(`${'https://placeswithbear.herokuapp.com' || 'localhost:8800'}/places/update/${props.placeId}`, {
+
+   
+       
+
         name: placeFormData.placeName,
         location: {
                 street: placeFormData.placeStreet,

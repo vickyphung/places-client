@@ -14,7 +14,7 @@ const DeletePlace = (props) => {
       const delPlace = async () => {
         if (props.placeId) {
           const response = await axios.delete(
-            `https://placeswithbear.herokuapp.com/places/delete/${props.placeId}`
+            (`https://placeswithbear.herokuapp.com/places/delete/${props.placeId}` || "http://localhost:8800/places")
           );
           console.log(response);
         }
