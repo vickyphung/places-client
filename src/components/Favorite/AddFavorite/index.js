@@ -33,11 +33,12 @@ const AddFavorite = (props) => {
     return (
       <div>
         <button
+        title="add a like"
           onClick={() => {
             addFav();
           }}
         >
-          + like
+          ❤️ 
         </button>
  
          {console.log(data.message)}

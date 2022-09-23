@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .title {
@@ -10,10 +11,8 @@
     padding: .5em;
     margin: .5em;
     border: 8px solid orange;
-    width: 400px;
     text-align: center;
     border-radius: 8px;
-    color: #03045e;
 }
 
 .placesTGTwo {
@@ -30,8 +29,8 @@
     color: #caf0f8;
     margin: 1em;
     padding: 2em;
-    width: 440px;
-    height: fit-content;
+    width: 32.25%;
+    height:fit-content;    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,10 +53,10 @@
     color: white;
     background-color: #4094c2;
     border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.25em;
-    line-height: .25px;
+    /* font-size: 1.25em; */
+    height: fit-content;
+    line-height: 20px;
+
 }
 
 .placeInfo {
@@ -91,22 +90,20 @@
 
 .reviewText {
     color: white;
-    padding: .5em;
-    line-height: .5px;
+    font-size: 14px;
 
 }
 
 .heart {
     color: #f4deb3;
-    font-size: 1.25rem;
 }
 
 .placeButtons {
-    display: inline-flex;
-    justify-content: center;
-    padding-top: 1.5em;
-    align-items: center;
+    display: flex;
+    padding-top: 1em;
+    flex-wrap: wrap;
     gap: 20px;
+    align-items: center;
 }
 
 .addPlaceTitle {
@@ -145,13 +142,13 @@ input {
 }
 
 button {
-    padding: .75em;
-    border: 1.5px solid #1a3c4f;
+    /* padding: .75em; */
+    border: 1.5px solid #0d2a55;
     border-radius: 10px;
-    background-color: orange;
-    color: white;
-    font-size: 1em;
-    letter-spacing: .15px;
+    background-color: #caf0f8;
+    color: #0d2a55;
+    width: fit-content;
+    padding: .5rem;
 }
 
 
@@ -163,4 +160,38 @@ button:hover {
 
 .deletePlaceBtn {
     color: #4094c2;
+}
+
+
+.italic {
+    font-style: italic;
+}
+
+.postedBy {
+    padding-left: 1.5em;
+    font-size: .8rem;
+}
+
+.reviewDrop {
+    background-color: #0077b6;
+    width: 70px;
+    height: 40px;
+    border: 1px solid #4094c2;
+    /* font-size: 1em; */
+    color: rgb(236, 233, 233);
+
+}
+
+
+.reviewDrop:hover {
+    background-color: #4094c2;
+    color: white;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

@@ -4,8 +4,17 @@ import axios from "axios";
 import "./style.css";
 import AddReview from "../Review/AddReview";
 import AddFavorite from "../Favorite/AddFavorite";
-import { Container } from "@chakra-ui/react";
 import NavBar from "../NavBar";
+
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+  Container,
+} from "@chakra-ui/react";
 
 const Places = (props) => {
   console.log("PINKY!");
@@ -20,7 +29,8 @@ const Places = (props) => {
     const fetchData = async () => {
       // const response = await axios.get("http://localhost:8800/places");
       const response = await axios.get(
-        ("https://placeswithbear.herokuapp.com/places" || "http://localhost:8800/places")
+        "https://placeswithbear.herokuapp.com/places" ||
+          "http://localhost:8800/places"
       );
 
       // , {
@@ -43,8 +53,9 @@ const Places = (props) => {
   return (
     <Container>
       {" "}
-      <div className="placeList">
+      <div className="container">
         {console.log(places)}
+        <div className="header">
         <NavBar />
         {/* <h1>
           <p className="title">Places</p>
@@ -61,6 +72,8 @@ const Places = (props) => {
 
           <p className="credit">© pinkybear | vicky@vicky.wtf</p>
         </div>
+        </div>
+        <div className="placeList">
 
         {places?.map((placeList, index) => {
           return (
@@ -69,17 +82,20 @@ const Places = (props) => {
                 <h2>{placeList.name}</h2>
               </div>
 
+              {console.log("Address Data Test")}
+              {console.log(placeList.location.street)}
 
-          {console.log("Address Data Test")}
-          {console.log(placeList.location.street)}
-
-
-           <div className="address">
-                <p>{placeList.location.street}</p>
-                <p>{placeList.location.city}</p>
-                <p>{placeList.location.state}</p>
-                <p>{placeList.location.zip}</p>
-          </div>
+              <div className="address">
+                <p>
+                  {placeList.location.street}
+                  <br />
+                  {placeList.location.city}
+                  <br />
+                  {placeList.location.state}
+                  <br />
+                  {placeList.location.zip}
+                </p>
+              </div>
 
               <div className="placeInfo">
                 <div className="tags">
@@ -95,24 +111,37 @@ const Places = (props) => {
                 <div className="favCount">
                   <p>
                     <span className="favCounter">
-                      <span className="heart">♡ </span>
+                      <span className="heart">❤️ </span>
                       {placeList.favorites}
                     </span>
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="tagsLabel">Reviews:</h3>
-                  {placeList?.reviews?.map((review, index) => {
-                    return (
-                      <div key={index} id="reviews-list">
-                        <p className="reviewText">∙{review.review}</p>
-                        {/* <h3 className="tagsLabel">Posted by:</h3>{" "}
-                      <p className="reviewText">{review.user}</p> */}
-                      </div>
-                    );
-                  })}
-                </div>
+                <Accordion allowToggle>
+                  <AccordionItem>
+                    <h2>
+                    <AccordionButton 
+                    className="reviewDrop"
+                    _expanded={{ bg: '#4094c2', color: 'white' }}>
+                        <Box flex="1" textAlign="left">
+                          <p className="">Reviews</p>
+                        </Box>
+                        <AccordionIcon />
+
+                      </AccordionButton>
+                    </h2>
+                    <AccordionPanel pb={4}>
+                      {placeList?.reviews?.map((review, index) => {
+                        return (
+                          <div key={index} id="reviews-list">
+                            <p className="reviewText">💬 {review.review}</p>
+                            <p className="postedBy"> -{" "}<span className="italic">{review.user}</span></p>
+                          </div>
+                        );
+                      })}
+                    </AccordionPanel>
+                  </AccordionItem>
+                </Accordion>
 
                 {/* <div>
               <h3>Posted by</h3>
@@ -127,26 +156,28 @@ const Places = (props) => {
                   {/* <Button onClick={() => props.setPlaceUpdateId(placeList._id)}>Edit</Button>   */}
 
                   <button
+                  title="edit post"
                     onClick={() => {
                       props.setPlaceUpdateId(placeList._id);
                     }}
                   >
-                    edit
+                    ✏️ edit
                   </button>
 
                   <button
-                    className="deletePlaceBtn"
+                    // className="deletePlaceBtn"
                     onClick={() => {
                       delPost(placeList._id);
                     }}
                   >
-                    delete
+                    ❌ delete
                   </button>
                 </div>
               </div>
             </div>
           );
         })}
+        </div>
       </div>
     </Container>
   );

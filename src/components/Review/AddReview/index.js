@@ -53,8 +53,8 @@ const AddReview = (props) => {
 
     return (
       <div>
-          <button onClick={onOpen}>
-            + review
+          <button onClick={onOpen} title="leave a review">
+          💬 
           </button>
 
         <Stack direction="row" spacing={4}>
