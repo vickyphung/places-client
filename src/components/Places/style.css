@@ -195,3 +195,12 @@ button:hover {
     align-items: center;
     justify-content: center;
 }
+
+
+.updatePlaceForm {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+text-align: right;
+}

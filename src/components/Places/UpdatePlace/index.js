@@ -76,22 +76,34 @@ const UpdatePlace = (props) => {
                 return (
                     <div>        
                         <NavBar />
+                        <div className='updatePlaceForm'>
                         <h1>Update {place.name}</h1>
+
                         <form onSubmit={handleSubmit}>
+                           <div>
                             <label htmlFor="placeName">Name:</label>
                             <input name="placeName" placeholder={place.name} id="placeName" onChange={handleChange} />
+                            </div>
+                            <div>
                             <label htmlFor="placeStreet">Street:</label>
                             <input name="placeStreet" id="placeStreet" placeholder={place.location.street} onChange={handleChange} />
+                            </div><div>
                             <label htmlFor="placeCity">City:</label>
                             <input name="placeCity" id="placeCity" placeholder={place.location.city} onChange={handleChange} />
+                            </div><div>
                             <label htmlFor="placeState">State:</label>
                             <input name="placeState" id="placeState" placeholder={place.location.state} onChange={handleChange} />
+                            </div><div>
                             <label htmlFor="placeZip">Zip:</label>
                             <input name="placeZip" id="placeZip" placeholder={place.location.zip} onChange={handleChange} />
+                            </div><div>
                             <label htmlFor="placeTags">Tags:</label>
                             <input name="placeTags" id="placeTags" placeholder={place.tags} onChange={handleChange} />
+                            </div><div>
                             <input type="submit" />
+                            </div>
                         </form>
+                        </div>
                     </div>
                 )
             })}
