@@ -4,44 +4,66 @@
 }
 
 .credit {
-    font-size: 1rem;
-    margin: -.01em;
+    font-size: .8rem;
+    margin-top: .25rem;
+    margin-bottom: -.5rem;
 }
 
 .placesTG {
-    color: #5b6efd;
-    font-size: 2.5rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
     text-decoration: underline;
-    margin-top: -1em;
-    margin-bottom: -.5em
 }
+
 
 .bold {
     font-weight: bold;
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 .home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* background-color: orange; */
+    width: 100vw;
+    height: 100vh;
 }
 
 .siteName {
     font-size: 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: .25rem;
     border: 8px solid orange;
+    background-color: orange;
     border-radius: 8px;
-    padding: .75em;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    margin: 1em;
+    padding: .5em;
+    color: white;
+    border: 2px solid white;
 }
 
+
+
 .info {
-    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    /* align-self: center; */
+    /* align-items: center; */
+    width: 540px;
+    color: rgb(31, 9, 53);
+    letter-spacing: .05px;
+}
+
+
+.title {
+    display: flex;
+    /* background-color: orange; */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: .25em;
+    padding-top: 1em;
+
 }

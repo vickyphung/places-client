@@ -8,33 +8,33 @@ function Home(props) {
   console.log("Welcome HOME");
   return (
     <div className="home">
-      <NavBar />
       {/* <Login /> */}
 
       {/* <Places /> */}
-      <div className="siteName">
-        <p className="bold">free</p>
-        <p className="placesTG">
-          <Link className="placesTG" to="/places">
-            places to go
-          </Link>
-        </p>
-        <p>
-          in the <span className="bold">DMV</span>
-        </p>
-        <p className="credit">© pinkybear | vicky@vicky.wtf</p>
-      </div>
+      <div className="title">
+        <Link className="homepage" to="/">
+          <div className="siteName">
+            <span className="placesTG">places to go</span>
+            in the <span className="bold">DMV</span>
+            <p className="credit">by: vicky@vicky.wtf</p>
+          </div>
+        </Link>
+        <NavBar />
+    
       <div className="info">
         <p>
-          Users can view a database of Places to go in the DC, MD, and VA area. 
+          Users can view a database of Places to go in the DC, MD, and VA area.
         </p>
-        <p>Users can manually add a place to the database.</p>
-        <p>Users can also edit or delete a place. (User validation is still in development).</p>
-        <p>Users can search for places using Google Maps Places API.</p>
-        <p>Search Results will show detailed information, including operation status, phone number, link, address, hours, and google reviews.</p>
-        <p>Users can add a place to the database from the search resutls.</p>
-        <p>Users can filter through the Places database via State, Tag, or Name.</p>
+        <p>Users can manually add a place to the database or search and add.</p>
+
+        <p>Users can search for places by name, location, or keyword. Results will show name, address, phone number, website, hours, and google reviews. Users can add a place to the database from the search results.</p>
+        {/* <p>
+          Users can filter through the Places database by State, Tag, or Name.
+        </p> */}
+
+        This is a MongoDB full CRUD REST API built with Node.js and Express.js, with a React front-end. Still in development.
       </div>
+    </div>
     </div>
   );
 }

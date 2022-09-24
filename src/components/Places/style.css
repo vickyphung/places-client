@@ -6,15 +6,6 @@
     flex-wrap: wrap;
 }
 
-.title {
-    font-size: 3rem;
-    padding: .5em;
-    margin: .5em;
-    border: 8px solid orange;
-    text-align: center;
-    border-radius: 8px;
-}
-
 .placesTGTwo {
     color: #5b6efd;
     font-size: 2.5rem;
@@ -23,28 +14,33 @@
     margin-bottom: -.5em
 } 
 .place {
-    border: 7px solid #0d2a55;
+    border: 7px solid #0077b6;
     border-radius: 5px;
     background-color: #0077b6;
     color: #caf0f8;
     margin: 1em;
-    padding: 2em;
-    width: 32.25%;
+    width: 300px;
+    /* min-height: 500px; */
     height:fit-content;    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     letter-spacing: .5px;
 }
 
 .placeName {
-    font-size: 1.25em;
+    font-size: 1.05em;
     color: #0077b6;
-    border: 2px solid white;
+    /* color:white; */
+    /* border: 2px solid white; */
     border-radius: 5px;
     background-color: white;
     font-weight: bold;
-    padding-left: 1em;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
 }
 
 .address {
@@ -52,58 +48,77 @@
     padding: 1rem;
     color: white;
     background-color: #4094c2;
-    border-radius: 6px;
+    border-radius: 5px;
     /* font-size: 1.25em; */
-    height: fit-content;
+    height: 70px;
     line-height: 20px;
-
-}
-
-.placeInfo {
-    margin: 1em;
-}
-
-.tagsLabel {
-    letter-spacing: .25px;
-    color: #f4deb3;
-}
-.tags {
     display: flex;
-    gap: 5px;
+    align-items: center;
 }
+
+.tagsFav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .tag {
-    padding: .05px;
     color: #f4deb3;
-}
-
-.favCount {
+    list-style-type: none;
     display: flex;
-    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .favCounter{
-    color: #eea56c;
-    padding: .25em;
-    font-size: 1.15rem;
+    color: #f4deb3;
+}
+.reviewSection{
+    width: 300px;
+}
+.reviewLabel {
+    font-size: .95rem;
+}
+
+.reviewDrop {
+    background-color: #0077b6;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #0077b6;
+    /* font-size: 1em; */
+    color: rgb(236, 233, 233);
+    /* border: 1px solid orange; */
+}
+
+
+.reviewDrop:hover {
+    background-color: #4094c2;
+    color: white;
+
+}
+
+
+.reviewsBox{
+    padding-left: 1rem;
+    margin-top: -1rem;
+    border: 1px solid #4094c2;
+    border-radius: 5px;
 }
 
 .reviewText {
     color: white;
     font-size: 14px;
-
 }
 
-.heart {
-    color: #f4deb3;
-}
 
-.placeButtons {
-    display: flex;
-    padding-top: 1em;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
+.buttonSection{
+    display:flex;
+    justify-content: space-around;
+    /* background-color: #4094c2; */
+    margin-top: .5em;
 }
 
 .addPlaceTitle {
@@ -143,12 +158,16 @@ input {
 
 button {
     /* padding: .75em; */
-    border: 1.5px solid #0d2a55;
+    border: 1.5px solid #4094c2;
     border-radius: 10px;
-    background-color: #caf0f8;
+    background-color: #4094c2;
     color: #0d2a55;
     width: fit-content;
     padding: .5rem;
+}
+
+.accordIcon{
+    font-size: 1.75em;
 }
 
 
@@ -172,22 +191,7 @@ button:hover {
     font-size: .8rem;
 }
 
-.reviewDrop {
-    background-color: #0077b6;
-    width: 70px;
-    height: 40px;
-    border: 1px solid #4094c2;
-    /* font-size: 1em; */
-    color: rgb(236, 233, 233);
 
-}
-
-
-.reviewDrop:hover {
-    background-color: #4094c2;
-    color: white;
-
-}
 
 .header {
     display: flex;

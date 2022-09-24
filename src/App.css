@@ -2,9 +2,6 @@
   font-family: Helvetica;
 }
 
-
-
-
 .submitButton {
   width: 160px;
   color: white;
@@ -20,12 +17,10 @@
 }
 
 
-
 .createAccount{
   margin: 1em;
   padding: 1em;
 }
-
 
 .createUser, .loginUser {
   padding: 1rem;
@@ -36,3 +31,11 @@
 }
 
 
+Link, a {
+  text-decoration: none;
+  color: black;
+}
+
+Link:hover {
+color: black;
+}

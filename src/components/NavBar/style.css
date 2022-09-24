@@ -6,15 +6,6 @@
     gap:30px;
     text-decoration: none;
     margin: 1em;
-    border-bottom: 1px solid #0d2a55;
-
+    border: 1px solid black;
 }
 
-Link, a {
-    text-decoration: none;
-    color: #0d85fe;
-}
-
-a:hover {
-    color: orange;
-}

@@ -55,29 +55,24 @@ const Places = (props) => {
       {" "}
       <div className="container">
         {console.log(places)}
-        <div className="header">
-        <NavBar />
-        {/* <h1>
-          <p className="title">Places</p>
-        </h1> */}
-
-        <div className="siteName">
-          <p className="bold">free</p>
-          <Link className="placesTG" to="/places">
-            places to go
-          </Link>
-          <p>
+        <div className="title">
+        <Link className="homepage" to="/">
+          <div className="siteName">
+            <span className="placesTG">places to go</span>
             in the <span className="bold">DMV</span>
-          </p>
-
-          <p className="credit">© pinkybear | vicky@vicky.wtf</p>
-        </div>
-        </div>
+            <p className="credit">by: vicky@vicky.wtf</p>
+          </div>
+        </Link>
+        <NavBar />
+      </div>
         <div className="placeList">
 
         {places?.map((placeList, index) => {
           return (
             <div className="place" key={index}>
+           
+              <div className="nameAdd">
+            
               <div className="placeName">
                 <h2>{placeList.name}</h2>
               </div>
@@ -89,21 +84,21 @@ const Places = (props) => {
                 <p>
                   {placeList.location.street}
                   <br />
-                  {placeList.location.city}
-                  <br />
-                  {placeList.location.state}
-                  <br />
+                  {placeList.location.city}, {" "}
+                  {placeList.location.state} {" "}
                   {placeList.location.zip}
                 </p>
               </div>
+              </div>
 
-              <div className="placeInfo">
+
+                <div className="tagsFav">
                 <div className="tags">
                   {placeList?.tags?.map((tag, index) => {
                     return (
-                      <div key={index} className="tag">
+                      <li key={index} className="tag">
                         {tag}
-                      </div>
+                      </li>
                     );
                   })}
                 </div>
@@ -117,6 +112,7 @@ const Places = (props) => {
                   </p>
                 </div>
 
+                  <div className="reviewSection">
                 <Accordion allowToggle>
                   <AccordionItem>
                     <h2>
@@ -124,13 +120,16 @@ const Places = (props) => {
                     className="reviewDrop"
                     _expanded={{ bg: '#4094c2', color: 'white' }}>
                         <Box flex="1" textAlign="left">
-                          <p className="">Reviews</p>
+                          <p className="reviewLabel">Reviews</p>
                         </Box>
-                        <AccordionIcon />
-
+                     
+                     <span className="accordIcon">   <AccordionIcon />
+                     </span>
                       </AccordionButton>
                     </h2>
-                    <AccordionPanel pb={4}>
+                    <AccordionPanel 
+                    className="reviewsBox"
+                    pb={4}>
                       {placeList?.reviews?.map((review, index) => {
                         return (
                           <div key={index} id="reviews-list">
@@ -142,12 +141,14 @@ const Places = (props) => {
                     </AccordionPanel>
                   </AccordionItem>
                 </Accordion>
+                </div>
+                </div>
 
                 {/* <div>
               <h3>Posted by</h3>
               <p>{placeList.user ? placeList.user : "Unknown"}</p>
             </div> */}
-                <div className="placeButtons">
+                <div className="buttonSection">
                   <AddReview placeId={placeList._id} userId={props.userId} />
                   <AddFavorite placeId={placeList._id} userId={props.userId} />
 
@@ -172,7 +173,7 @@ const Places = (props) => {
                   >
                     ❌ delete
                   </button>
-                </div>
+             
               </div>
             </div>
           );
