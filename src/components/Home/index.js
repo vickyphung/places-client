@@ -34,7 +34,7 @@ function Home(props) {
 
         This is a MongoDB full CRUD REST API built with Node.js and Express.js, with a React front-end. Still in development.
 
-       <p><Link to="/places">Places to go in the DMV</Link></p>
+       <p><Link className="placesLink" to="/places">Places to go in the DMV</Link></p>
       </div>
     </div>
     </div>
