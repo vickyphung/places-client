@@ -14,7 +14,7 @@
     margin-bottom: -.5em
 } 
 .place {
-    border: 7px solid #0077b6;
+    border: 5px solid #0d2a55;
     border-radius: 5px;
     background-color: #0077b6;
     color: #caf0f8;
@@ -26,26 +26,28 @@
     flex-direction: column;
     justify-content: space-between;
     letter-spacing: .5px;
+    padding: .5rem;
 }
 
 .placeName {
     font-size: 1.05em;
-    color: #0077b6;
+    color: #276a8f;
     /* color:white; */
-    /* border: 2px solid white; */
-    border-radius: 5px;
+    border: 2px solid white;
     background-color: white;
+    border-radius: 5px;
     font-weight: bold;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: .5rem;
+    padding: .25rem;
 }
 
 .address {
-    /* border: 3px solid #00b2ca; */
-    padding: 1rem;
+    padding: .25rem;
+    /* width: 300px; */
+    border: 1px solid #4094c2;
     color: white;
     background-color: #4094c2;
     border-radius: 5px;
@@ -80,14 +82,16 @@
     width: 300px;
 }
 .reviewLabel {
-    font-size: .95rem;
+    font-size: .9rem;
+    
 }
 
 .reviewDrop {
     background-color: #0077b6;
     width: 300px;
     height: 40px;
-    border: 1px solid #0077b6;
+    border: 1px solid #4094c2;
+
     /* font-size: 1em; */
     color: rgb(236, 233, 233);
     /* border: 1px solid orange; */
@@ -119,6 +123,7 @@
     justify-content: space-around;
     /* background-color: #4094c2; */
     margin-top: .5em;
+    margin-bottom: .5em;
 }
 
 .addPlaceTitle {
