@@ -32,9 +32,7 @@ function Home(props) {
           Users can filter through the Places database by State, Tag, or Name.
         </p> */}
 
-        This is a MongoDB full CRUD REST API built with Node.js and Express.js, with a React front-end.
-
-        <p>Please give the places database a moment to load. This app is still in development. Thank you and enjoy!</p>
+        <p>This is a MongoDB full CRUD REST API built with Node.js and Express.js, with a React front-end. This app is still in development. Thank you and enjoy!</p>
 
        <p><Link className="placesLink" to="/places">Places to go in the DMV</Link></p>
       </div>
