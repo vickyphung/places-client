@@ -66,7 +66,7 @@ const Places = (props) => {
         {console.log(places)}
         <div className="title">
           <Link className="homepage" to="/">
-            <div className="siteName">
+            <div className="siteNameTwo">
               <span className="placesTG">places to go</span>
               in the <span className="bold">DMV</span>
               <p className="credit">by: vicky@vicky.wtf</p>
@@ -128,7 +128,7 @@ const Places = (props) => {
                           <h2>
                             <AccordionButton
                               className="reviewDrop"
-                              _expanded={{ bg: "#4094c2", color: "white" }}
+                              _expanded={{ bg: "#495db8", color: "white" }}
                             >
                               <Box flex="1" textAlign="left">
                                 <p className="reviewLabel">Reviews</p>
@@ -179,7 +179,8 @@ const Places = (props) => {
                     {/* <Button onClick={() => props.setPlaceUpdateId(placeList._id)}>Edit</Button>   */}
 
                     <button
-                      title="edit post"
+                      title="edit place"
+                      className="editBtn"
                       onClick={() => {
                         props.setPlaceUpdateId(placeList._id);
                       }}
@@ -188,7 +189,8 @@ const Places = (props) => {
                     </button>
 
                     <button
-                      // className="deletePlaceBtn"
+                      className="editBtn"
+                      title="delete place"
                       onClick={() => {
                         delPost(placeList._id);
                       }}
