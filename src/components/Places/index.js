@@ -20,6 +20,15 @@ const Places = (props) => {
   console.log("PINKY!");
   console.log(props.userId);
 
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
   // const fakeUserId = "62b5153a18a020243c4bb4a0";
 
   // const [open, setOpen] = useState(false);
@@ -56,129 +65,142 @@ const Places = (props) => {
       <div className="container">
         {console.log(places)}
         <div className="title">
-        <Link className="homepage" to="/">
-          <div className="siteName">
-            <span className="placesTG">places to go</span>
-            in the <span className="bold">DMV</span>
-            <p className="credit">by: vicky@vicky.wtf</p>
+          <Link className="homepage" to="/">
+            <div className="siteName">
+              <span className="placesTG">places to go</span>
+              in the <span className="bold">DMV</span>
+              <p className="credit">by: vicky@vicky.wtf</p>
+            </div>
+          </Link>
+          <NavBar />
+        </div>
+
+        {loading ? (
+          <div className="loader-container">
+            <div className="spinner"></div>
           </div>
-        </Link>
-        <NavBar />
-      </div>
-        <div className="placeList">
+        ) : (
+          <div className="placeList">
+            {places?.map((placeList, index) => {
+              return (
+                <div className="place" key={index}>
+                  <div className="nameAdd">
+                    <div className="placeName">
+                      <h2>{placeList.name}</h2>
+                    </div>
 
-        {places?.map((placeList, index) => {
-          return (
-            <div className="place" key={index}>
-           
-              <div className="nameAdd">
-            
-              <div className="placeName">
-                <h2>{placeList.name}</h2>
-              </div>
+                    {console.log("Address Data Test")}
+                    {console.log(placeList.location.street)}
 
-              {console.log("Address Data Test")}
-              {console.log(placeList.location.street)}
+                    <div className="address">
+                      <p>
+                        {placeList.location.street}
+                        <br />
+                        {placeList.location.city}, {placeList.location.state}{" "}
+                        {placeList.location.zip}
+                      </p>
+                    </div>
+                  </div>
 
-              <div className="address">
-                <p>
-                  {placeList.location.street}
-                  <br />
-                  {placeList.location.city}, {" "}
-                  {placeList.location.state} {" "}
-                  {placeList.location.zip}
-                </p>
-              </div>
-              </div>
-
-
-                <div className="tagsFav">
-                <div className="tags">
-                  {placeList?.tags?.map((tag, index) => {
-                    return (
-                      <li key={index} className="tag">
-                        {tag}
-                      </li>
-                    );
-                  })}
-                </div>
-
-                <div className="favCount">
-                  <p>
-                    <span className="favCounter">
-                      <span className="heart">❤️ </span>
-                      {placeList.favorites}
-                    </span>
-                  </p>
-                </div>
-
-                  <div className="reviewSection">
-                <Accordion allowToggle>
-                  <AccordionItem>
-                    <h2>
-                    <AccordionButton 
-                    className="reviewDrop"
-                    _expanded={{ bg: '#4094c2', color: 'white' }}>
-                        <Box flex="1" textAlign="left">
-                          <p className="reviewLabel">Reviews</p>
-                        </Box>
-                     
-                     <span className="accordIcon">   <AccordionIcon />
-                     </span>
-                      </AccordionButton>
-                    </h2>
-                    <AccordionPanel 
-                    className="reviewsBox"
-                    pb={4}>
-                      {placeList?.reviews?.map((review, index) => {
+                  <div className="tagsFav">
+                    <div className="tags">
+                      {placeList?.tags?.map((tag, index) => {
                         return (
-                          <div key={index} id="reviews-list">
-                            <p className="reviewText">💬 {review.review}</p>
-                            <p className="postedBy"> -{" "}<span className="italic">{review.user}</span></p>
-                          </div>
+                          <li key={index} className="tag">
+                            {tag}
+                          </li>
                         );
                       })}
-                    </AccordionPanel>
-                  </AccordionItem>
-                </Accordion>
-                </div>
-                </div>
+                    </div>
 
-                {/* <div>
+                    <div className="favCount">
+                      <p>
+                        <span className="favCounter">
+                          <span className="heart">❤️ </span>
+                          {placeList.favorites}
+                        </span>
+                      </p>
+                    </div>
+
+                    <div className="reviewSection">
+                      <Accordion allowToggle>
+                        <AccordionItem>
+                          <h2>
+                            <AccordionButton
+                              className="reviewDrop"
+                              _expanded={{ bg: "#4094c2", color: "white" }}
+                            >
+                              <Box flex="1" textAlign="left">
+                                <p className="reviewLabel">Reviews</p>
+                              </Box>
+
+                              <span className="accordIcon">
+                                {" "}
+                                <AccordionIcon />
+                              </span>
+                            </AccordionButton>
+                          </h2>
+                          <AccordionPanel className="reviewsBox" pb={4}>
+                            {placeList?.reviews?.map((review, index) => {
+                              return (
+                                <div key={index} id="reviews-list">
+                                  <p className="reviewText">
+                                    💬 {review.review}
+                                  </p>
+                                  <p className="postedBy">
+                                    {" "}
+                                    -{" "}
+                                    <span className="italic">
+                                      {review.user}
+                                    </span>
+                                  </p>
+                                </div>
+                              );
+                            })}
+                          </AccordionPanel>
+                        </AccordionItem>
+                      </Accordion>
+                    </div>
+                  </div>
+
+                  {/* <div>
               <h3>Posted by</h3>
               <p>{placeList.user ? placeList.user : "Unknown"}</p>
             </div> */}
-                <div className="buttonSection">
-                  <AddReview placeId={placeList._id} userId={props.userId} />
-                  <AddFavorite placeId={placeList._id} userId={props.userId} />
+                  <div className="buttonSection">
+                    <AddReview placeId={placeList._id} userId={props.userId} />
+                    <AddFavorite
+                      placeId={placeList._id}
+                      userId={props.userId}
+                    />
 
-                  {/* <Button onClick={() => props.setDeleteId(placeList._id)}>Delete</Button>           */}
-                  {/* <button onClick={() => delPost(placeList._id)}>del3</button>  */}
-                  {/* <Button onClick={() => props.setPlaceUpdateId(placeList._id)}>Edit</Button>   */}
+                    {/* <Button onClick={() => props.setDeleteId(placeList._id)}>Delete</Button>           */}
+                    {/* <button onClick={() => delPost(placeList._id)}>del3</button>  */}
+                    {/* <Button onClick={() => props.setPlaceUpdateId(placeList._id)}>Edit</Button>   */}
 
-                  <button
-                  title="edit post"
-                    onClick={() => {
-                      props.setPlaceUpdateId(placeList._id);
-                    }}
-                  >
-                    ✏️ edit
-                  </button>
+                    <button
+                      title="edit post"
+                      onClick={() => {
+                        props.setPlaceUpdateId(placeList._id);
+                      }}
+                    >
+                      ✏️ edit
+                    </button>
 
-                  <button
-                    // className="deletePlaceBtn"
-                    onClick={() => {
-                      delPost(placeList._id);
-                    }}
-                  >
-                    ❌ delete
-                  </button>
-             
-              </div>
-            </div>
-          );
-        })}
-        </div>
+                    <button
+                      // className="deletePlaceBtn"
+                      onClick={() => {
+                        delPost(placeList._id);
+                      }}
+                    >
+                      ❌ delete
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </Container>
   );
