@@ -26,7 +26,7 @@ const Places = (props) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 4000);
   }, []);
 
   // const fakeUserId = "62b5153a18a020243c4bb4a0";
@@ -62,17 +62,18 @@ const Places = (props) => {
   return (
     <Container>
       {" "}
-      <div className="container">
+      <div className="home">
         {console.log(places)}
-        <div className="title">
-          <Link className="homepage" to="/">
-            <div className="siteNameTwo">
-              <span className="placesTG">places to go</span>
-              in the <span className="bold">DMV</span>
-              <p className="credit">by: vicky@vicky.wtf</p>
-            </div>
-          </Link>
-          <NavBar />
+
+        <div className="top">
+        <Link className="homepage" to="/">
+          <div className="siteNameTwo">
+            <span className="bold">places to go </span>
+            in the <span className="bold">DMV</span>
+            <p className="credit">by: vicky@vicky.wtf</p>
+          </div>
+        </Link>
+        <NavBar />
         </div>
 
         {loading ? (

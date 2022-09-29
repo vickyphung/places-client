@@ -2,10 +2,7 @@
     background: white;
 }
 
-.click {
-    font-size: 2rem;
-    margin-top: 1em;
-}
+
 
 .credit {
     font-size: .8rem;
@@ -26,24 +23,33 @@
     font-size: 1em;
 }
 
+.top {
+    border-radius: .75em;
+    margin: 1em;
+    /* border: 2px solid #b2b2b2; */
+}
 .home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: orange; */
+    background: #c3f0c8;
     width: 100vw;
     height: 100vh;
 }
 
 .siteName {
     font-size: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #c3f0c8;
-    background-color: #c3f0c8;
+
+    border-bottom: 1px solid #c07372;
+    background-color: #da312a;
     border-radius: 8px;
     padding: .5em;
-    color: #6e6b6b;
+    padding-bottom: 1em;
+
+    color: white;
+}
+.placesTGHome {
+    font-size: 1.85rem;
 }
 .placesLink {
     font-size: 1.75rem;
@@ -56,18 +62,16 @@
 .info {
     display: flex;
     flex-direction: column;
-    /* align-self: center; */
-    /* align-items: center; */
-    width: 540px;
-    color: #444343;
+    align-items: left;
+    width:400px;
+    color: #191414;
     letter-spacing: .05px;
 }
 
 
 .title {
     display: flex;
-    /* background-color: orange; */
-    width: 100%;
+    /* width: 100%; */
     align-items: center;
     justify-content: center;
     flex-direction: column;

@@ -11,32 +11,34 @@ function Home(props) {
       {/* <Login /> */}
 
       {/* <Places /> */}
-      <div className="title">
+      <div className="top">
         <Link className="homepage" to="/">
           <div className="siteName">
-            <span className="placesTG">places to go</span>
+            <span className="bold">places to go </span>
             in the <span className="bold">DMV</span>
             <p className="credit">by: vicky@vicky.wtf</p>
           </div>
         </Link>
         <NavBar />
+        </div>
     
       <div className="info">
-        <p>
-          Users can view a database of Places to go in the DC, MD, and VA area.
-        </p>
-        <p>Users can manually add a place to the database or search and add.</p>
 
-        <p>Users can search for places by name, location, or keyword. Results will show name, address, phone number, website, hours, and google reviews. Users can add a place to the database from the search results.</p>
+
+        <h1><span className="dmv">Places to go in DC, Maryland, and Northern Virignia</span></h1>
+
+
+
+        <p>
+          View a database of places to go in the DMV area. Add a place to database, like places, or leave a review. Filter places by name, state, or tag. Search for places to add to database using Google Places API. Search results include detailed information and reviews. </p>
         {/* <p>
           Users can filter through the Places database by State, Tag, or Name.
         </p> */}
 
         <p>This is a MongoDB full CRUD REST API built with Node.js and Express.js, with a React front-end. This app is still in development. Thank you and enjoy!</p>
 
-       <p><Link className="placesLink" to="/places">Places to go in the DMV</Link></p>
+       <p><Link className="placesLink" to="/places">➤Places to go in the DMV</Link></p>
       </div>
-    </div>
     </div>
   );
 }

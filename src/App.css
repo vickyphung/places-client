@@ -1,7 +1,7 @@
-* {
-  font-family: Helvetica;
+.App {
+  background: #c3f0c8;
+  
 }
-
 .submitButton {
   width: 160px;
   color: white;

@@ -33,13 +33,11 @@
 
 .siteNameTwo {
     font-size: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #ffcdd2;
-    background-color: #ffcdd2;
     border-radius: 8px;
     padding: .5em;
-    color: #6e6b6b;
+    padding-bottom: 1em;
+    color: white;
+    background-color: #00906f;
 }
 
 .placeList {
