@@ -30,8 +30,8 @@ const Places = (props) => {
   }, []);
 
   // const fakeUserId = "62b5153a18a020243c4bb4a0";
-
   // const [open, setOpen] = useState(false);
+  
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
@@ -40,15 +40,13 @@ const Places = (props) => {
       const response = await axios.get(
         "https://placeswithbear.herokuapp.com/places" ||
           "http://localhost:8800/places"
+      , {
+        headers: {
+          "JWT-Token": localStorage.jwtToken
+        }
+      }
       );
-
-      // , {
-      //   headers: {
-      //     "JWT-Token": localStorage.jwtToken
-      //   }
-      // }
-      // );
-
+      console.log("JWT " + localStorage.jwtToken)
       console.log(response);
       setPlaces(response.data.placesList);
     };
@@ -89,10 +87,6 @@ const Places = (props) => {
                     <div className="placeName">
                       <h2>{placeList.name}</h2>
                     </div>
-
-                    {console.log("Address Data Test")}
-                    {console.log(placeList.location.street)}
-
                     <div className="address">
                       <p>
                         {placeList.location.street}

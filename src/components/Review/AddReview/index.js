@@ -12,12 +12,15 @@ import {
   ModalBody,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const AddReview = (props) => {
+  
   console.log(props.userId);
   console.log(props.placeId);
+  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const fakeUserId = "62bbf966c4c434b12444023d";
+  const fakeUserId = "633f3b441673cfa3030031eb";
   const [reviewFormData, setReviewFormData] = useState({
     review: "",
   });
@@ -46,6 +49,8 @@ const AddReview = (props) => {
     console.log(response);
     setResponse(response);
     localStorage.setItem("jwtToken", response.data.jwtToken);
+    navigate("/places");
+    
   };
 
   return (
@@ -63,7 +68,6 @@ const AddReview = (props) => {
             </ModalHeader>
             <ModalBody className="modalBody">
               <form onSubmit={handleSubmit}>
-                {/* <label htmlFor="review">Leave a Review</label> */}
                 <textarea
                   className="addReviewText"
                   name="review"
