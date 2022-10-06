@@ -15,15 +15,19 @@ const TextSearch = (props) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const response = await axios.get(`https://placeswithbear.herokuapp.com/search/textSearch/${formData}`)
+        // const response = await axios.get(`https://placeswithbear.herokuapp.com/search/textSearch/${formData}`)
+
+        const response = await axios.get(
+          `${
+            "https://placeswithbear.herokuapp.com" || "localhost:8800"
+          }/search/textSearch/${formData}`)
+
         console.log(response);
         setResults(response.data.results);
     }
 
   return (
     <div className='googleTextSearch'>
-      {/* <h1>Text Search</h1> */}
-      
       <form className="searchForm" onSubmit={handleSubmit}>
         <div>
           <input

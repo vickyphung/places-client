@@ -24,7 +24,7 @@ export default function Login() {
   });
 
   const onSubmit = async () => {
-    const response = await axios.post("http://localhost:8800/user/login", {
+    const response = await axios.post(`${'https://placeswithbear.herokuapp.com' || 'localhost:8800'}/user/login`, {
         name: loginFormData.loginName,
         password: loginFormData.loginPassword
   })

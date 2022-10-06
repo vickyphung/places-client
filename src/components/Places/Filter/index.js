@@ -6,8 +6,6 @@ import Name from "./Name";
 
 function Filter() {
   const [places, setPlaces] = useState([]);
-
-
   const [formData, setFormData] = useState("");
 
   const handleChange = (event) => {
@@ -22,14 +20,16 @@ function Filter() {
       }/places/state/${formData}`
     );
     console.log(response);
-    setPlaces(response.data.results);
-    console.log(places)
+    setPlaces(response.data.places);
+    console.log(response.data);
+    // console.log(response.data.results);
+
   };
-
-
 
   return (
     <div className="flex">
+      {console.log(places)}
+
       <NavBar />
 
       <div>
@@ -53,23 +53,18 @@ function Filter() {
         </form>
       </div>
 
-{/* 
       <div>
-        {places?.map((results, index) => {
+        {places?.map((place, index) => {
           return (
             <div className="searchResults" key={index}>
-              <h2>{results.name}</h2>
+              <h2>{place?.name}</h2>
             </div>
           );
         })}
-      </div> */}
+      </div>
 
-
-
-
-<Tag />
-<Name />
-
+      <Tag />
+      {/* <Name /> */}
     </div>
   );
 }

@@ -3,38 +3,42 @@ import axios from "axios";
 
 
 function Name() {
-    const [results, setResults] = useState([]);
-    const [formData, setFormData] = useState("");
+  const [places, setPlaces] = useState([]);
+  const [formData, setFormData] = useState("");
 
-    const handleChangeTag = (event) => {
-        setFormData(event.target.value);
-      };
-    
-      const handleSubmitTag = async (event) => {
-        event.preventDefault();
-        const response = await axios.get(
-          `${
-            "https://placeswithbear.herokuapp.com" || "localhost:8800"
-          }/places/name/${formData}`
-        );
-        console.log(response);
-        setResults(response.data);
-        console.log(results)
-      };
+  const handleChange = (event) => {
+    setFormData(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const response = await axios.get(
+      `${
+        "https://placeswithbear.herokuapp.com" || "localhost:8800"
+      }/places/name/${formData}`
+    );
+    console.log(response);
+    setPlaces(response.data[0]);
+    console.log(response.data);
+    // console.log(response.data.results);
+
+  };
   return (
     <div>
+      {console.log(places)}
+
       <div>
         <h1>Filter Posts by Name</h1>
       </div>
       <div>
-        <form className="searchForm" onSubmit={handleSubmitTag}>
+        <form className="searchForm" onSubmit={handleSubmit}>
           <div>
             <input
               className="searchInput"
               name="query"
               id="query"
               placeholder="Name of Place"
-              onChange={handleChangeTag}
+              onChange={handleChange}
             />
           </div>
           <div>
@@ -44,15 +48,17 @@ function Name() {
       </div>
 
 
-      {/* <div>
-        {results?.map((result, index) => {
+      <div>
+        {/* {places?.map((result, index) => {
           return (
             <div className="searchResults" key={index}>
-              <h2>{result.name}</h2>
+              {console.log(places)}
+              <h2>{result?.name}</h2>
             </div>
           );
-        })}
-      </div> */}
+        })} */}
+
+      </div>
 
     </div>
   );

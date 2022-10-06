@@ -14,8 +14,7 @@ const User = (props) => {
 
     useEffect(() => {
       const fetchData = async () => {
-        const response = await axios.get(
-          `https://placeswithbear.herokuapp.com/user/id`,
+        const response = await axios.get(`${'https://placeswithbear.herokuapp.com' || 'localhost:8800'}/user/id`,
           {
             headers: {
               "JWT-Token": localStorage.jwtToken,

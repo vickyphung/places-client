@@ -18,7 +18,7 @@ export default function CreateUser() {
   });
 
   const onSubmit = async () => {
-    const response = await axios.post("http://localhost:8800/user/", formData);
+    const response = await axios.post(`${'https://placeswithbear.herokuapp.com' || 'localhost:8800'}/user/`, formData);
     console.log(response);
     localStorage.setItem("jwtToken", response.data.jwtToken);
   };

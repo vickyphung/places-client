@@ -34,26 +34,21 @@ const Review = (props) => {
       <div>
         {reviews?.map((review, index) => {
           return (
-            <UnorderedList>
+      
               <div className="reviews" key={index}>
-                <ListItem className="title">
-                  {" "}
-                  <p>{review.place.name}</p>
-                </ListItem>
-                <ListItem>
-                  <p>{review.review}</p>
-                </ListItem>
-                <ListItem>
-                  <p>
-                    Created by {review.user.name} at {review.createdAt}
-                  </p>
-                </ListItem>
+              
+           
+                  <h2>{review?.place?.name}</h2>
+                  <p>{review?.review}</p>
+                  {/* <p>Created by: {review?.user?.name}</p> */}
+                  <p>Created at: {review.createdAt}</p>
+           
               </div>
-            </UnorderedList>
+   
           );
         })}{" "}
       </div>
-      ){" "}
+      {" "}
     </div>
   );
 };

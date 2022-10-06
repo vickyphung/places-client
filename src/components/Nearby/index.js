@@ -28,17 +28,6 @@ const Nearby = (props) => {
         </div>
         <TextSearch />
       </div>
-
-      {/* Places Database Search
-            <form>Tag Search
-              <input></input>
-            </form>       
-            <form>City Search
-              <input></input>
-            </form>   
-            <form>Zipcode Search
-              <input></input>
-            </form>    */}
     </div>
   );
 };

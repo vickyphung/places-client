@@ -18,7 +18,7 @@ function Tag() {
           }/places/tag/${formData}`
         );
         console.log(response);
-        setResults(response.data.results);
+        setResults(response.data.places);
       };
   return (
     <div>
@@ -47,7 +47,7 @@ function Tag() {
         {results?.map((result, index) => {
           return (
             <div className="searchResults" key={index}>
-              <h2>{result.name}</h2>
+              <h2>{result?.name}</h2>
             </div>
           );
         })}

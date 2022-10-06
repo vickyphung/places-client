@@ -7,7 +7,7 @@ const AddFavorite = (props) => {
   console.log(props.placeId);
   const [data, setData] = useState([]);
 
-  const fakeUserId = "62bbf966c4c434b12444023d";
+  const fakeUserId = "633f3b441673cfa3030031eb";
 
   // useEffect(()=> {
   //     const addFav = async () => {
