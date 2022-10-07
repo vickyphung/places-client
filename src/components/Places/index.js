@@ -82,11 +82,34 @@ const Places = (props) => {
           <div className="placeList">
             {places?.map((placeList, index) => {
               return (
-                <div className="place" key={index}>
-                  <div className="nameAdd">
-                    <div className="placeName">
+                <div className="pName" key={index}>
+         
+                    {/* <div className="placeName">
                       <h2>{placeList.name}</h2>
-                    </div>
+                    </div> */}
+
+
+                    <Accordion allowToggle>
+                      <AccordionItem>
+                      <AccordionButton
+                            className="pDrop"
+                            _expanded={{ bg: "white", color: "#2d46b9" }}
+                          >
+                            <Box flex="1" textAlign="left">
+                         <span className="placeName">{placeList.name}</span>
+                            </Box>
+
+                            <span className="accordIcon">
+                              {" "}
+                              <AccordionIcon />
+                            </span>
+                          </AccordionButton>
+
+                          <AccordionPanel className="" pb={4}>
+
+
+
+
                     <div className="address">
                       <p>
                         {placeList.location.street}
@@ -95,7 +118,8 @@ const Places = (props) => {
                         {placeList.location.zip}
                       </p>
                     </div>
-                  </div>
+                    <a href={placeList.url}>{placeList.url}</a>
+                
 
                   <div className="tagsFav">
                     <div className="tags">
@@ -117,44 +141,50 @@ const Places = (props) => {
                       </p>
                     </div>
 
-                    <div className="reviewSection">
-                      <Accordion allowToggle>
-                        <AccordionItem>
-                          <h2>
-                            <AccordionButton
-                              className="reviewDrop"
-                              _expanded={{ bg: "#495db8", color: "white" }}
-                            >
-                              <Box flex="1" textAlign="left">
-                                <p className="reviewLabel">Reviews</p>
-                              </Box>
 
-                              <span className="accordIcon">
-                                {" "}
-                                <AccordionIcon />
-                              </span>
-                            </AccordionButton>
-                          </h2>
-                          <AccordionPanel className="reviewsBox" pb={4}>
-                            {placeList?.reviews?.map((review, index) => {
-                              return (
-                                <div key={index} id="reviews-list">
-                                  <p className="reviewText">
-                                    💬 {review.review}
-                                  </p>
-                                  <p className="postedBy">
-                                    {" "}
-                                    -{" "}
-                                    <span className="italic">
-                                      {review.user}
-                                    </span>
-                                  </p>
-                                </div>
-                              );
-                            })}
-                          </AccordionPanel>
-                        </AccordionItem>
-                      </Accordion>
+<div>
+<a href={`${'https://placeswithbear.herokuapp.com' || 'localhost:8800'}/places/id/${placeList?._id}`}>Details</a>
+</div>
+
+</div><div>
+                    <div className="reviewSection">
+                    <Accordion allowToggle>
+                      <AccordionItem>
+                        <h2>
+                          <AccordionButton
+                            className="reviewDrop"
+                            _expanded={{ bg: "#495db8", color: "white" }}
+                          >
+                            <Box flex="1" textAlign="left">
+                              <p className="reviewLabel">Reviews</p>
+                            </Box>
+
+                            <span className="accordIcon">
+                              {" "}
+                              <AccordionIcon />
+                            </span>
+                          </AccordionButton>
+                        </h2>
+                        <AccordionPanel className="reviewsBox" pb={4}>
+                          {placeList?.reviews?.map((review, index) => {
+                            return (
+                              <div key={index} id="reviews-list">
+                                <p className="reviewText">
+                                  💬 {review.review}
+                                </p>
+                                <p className="postedBy">
+                                  {" "}
+                                  -{" "}
+                                  <span className="italic">
+                                    {review.user}
+                                  </span>
+                                </p>
+                              </div>
+                            );
+                          })}
+                        </AccordionPanel>
+                      </AccordionItem>
+                    </Accordion>
                     </div>
                   </div>
 
@@ -193,7 +223,18 @@ const Places = (props) => {
                       ❌ delete
                     </button>
                   </div>
+
+
+
+                  </AccordionPanel>
+                      </AccordionItem>
+                    </Accordion>
+
+
+
+
                 </div>
+
               );
             })}
           </div>

@@ -32,6 +32,8 @@ let fakeUserId = "62bbf966c4c434b12444023d";
     city: "",
     state: "",
     zip: "",
+    url: "",
+    phone: "",
     tags: [""],
     user: `${userId}`
   });
@@ -49,25 +51,27 @@ let fakeUserId = "62bbf966c4c434b12444023d";
 
       const response = await axios.post(`${'https://placeswithbear.herokuapp.com' || 'localhost:8800'}/places/add`, {
 
-      name: placeFormData.name,
-      // name:  `${props.placeName.name}`,
+      // name: placeFormData.name,
+      name:  `${props.placeName}`,
       location: {
         street: `${props.postFormData[0].short_name} ${props.postFormData[1].short_name}`,
         city: `${props.postFormData[3].short_name}`,
         state: `${props.postFormData[4].short_name}`,
         // zip: `${props.postFormData[6].short_name}`,
       },
+      url:  `${props.url}`,
       tags: [placeFormData.placeTags],
       user: `${fakeUserId}`
     });
     console.log(response);
-    // localStorage.setItem("jwtToken", response.data.jwtToken);
+    localStorage.setItem("jwtToken", response.data.jwtToken);
+    console.log("addFrM JWT " + response.data.jwtToken)
   };
 
   return (
     <div className="addFromMaps">
       <form className="addFromMapsForm" onSubmit={handleSubmit}>
-        <label className="nameLabel" htmlFor="placeName">
+        {/* <label className="nameLabel" htmlFor="placeName">
           Name:
         </label>
         <input
@@ -75,7 +79,7 @@ let fakeUserId = "62bbf966c4c434b12444023d";
           name="name"
           id="name"
           onChange={handleChange}
-        />
+        /> */}
 
         <label className="nameLabel" htmlFor="placeTags">
           Tags:

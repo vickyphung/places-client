@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import NavBar from "../../NavBar";
 import Tag from "./Tag";
-import Name from "./Name";
+// import Name from "./Name";
+
 
 function Filter() {
   const [places, setPlaces] = useState([]);
@@ -23,8 +24,22 @@ function Filter() {
     setPlaces(response.data.places);
     console.log(response.data);
     // console.log(response.data.results);
-
   };
+
+
+  const dc = async () => {
+    const response = await axios.get(
+      `${
+        "https://placeswithbear.herokuapp.com" || "localhost:8800"
+      }/places/state/DC`
+    );
+    console.log(response);
+    setPlaces(response.data.places);
+    console.log(response.data);
+    // console.log(response.data.results);
+  };
+
+
 
   return (
     <div className="flex">
@@ -37,6 +52,16 @@ function Filter() {
       </div>
 
       <div>
+
+    <button onClick={dc}>DC</button>
+
+
+
+
+
+
+
+
         <form className="searchForm" onSubmit={handleSubmit}>
           <div>
             <input
@@ -58,6 +83,13 @@ function Filter() {
           return (
             <div className="searchResults" key={index}>
               <h2>{place?.name}</h2>
+              {place?.location.street}
+              {place?.location.city}
+              {place?.location.state}
+              <a href={`${'https://placeswithbear.herokuapp.com' || 'localhost:8800'}/places/id/${place?._id}`}>Link</a>
+
+
+
             </div>
           );
         })}

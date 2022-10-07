@@ -46,6 +46,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 5px;
 }
 
 .placesTGTwo {
@@ -71,32 +72,56 @@
     padding: .5rem;
 }
 
-.placeName {
-    font-size: 1.05em;
-    color: #2d46b9;
-    /* color:white; */
-    border: 2px solid white;
-    background-color: white;
-    border-radius: 5px;
-    font-weight: bold;
-    height: 100px;
+
+.pName{
+    height:fit-content;    
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: .25rem;
+    align-items: left;
+    letter-spacing: .5px;
+    
+    background-color: #2d46b9;
+    border-radius: 5px;
+    padding: .5em;
+    width: 80%;
+
+}
+
+.pDrop{
+    background-color: #2d46b9;
+    border-radius: 5px;
+    /* height:65px;     */
+    /* border: 5px solid orange; */
+    padding: 20px;
+
+
+
+}
+
+.placeName {
+    font-size: 2.25em;
+    /* color:white; */
+    /* border: 2px solid white; */
+    /* background-color: white; */
+    border-radius: 5px;
+    letter-spacing: .75px;
+    padding: 5px;
 }
 
 .address {
-    padding: .25rem;
+    padding: 1rem;
     /* width: 300px; */
     border: 1px solid #2d46b9;
     color: white;
     background-color: #495db8;
     border-radius: 5px;
-    /* font-size: 1.25em; */
+    font-size: 1.5em;
     height: 70px;
-    line-height: 20px;
+    /* line-height: 20px; */
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -105,6 +130,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    font-size: 1.25rem;
 }
 
 
@@ -114,14 +141,14 @@
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 .favCounter{
     color: #f4deb3;
 }
 .reviewSection{
-    width: 300px;
+    width: 100%;
 }
 .reviewLabel {
     font-size: .9rem;
@@ -130,7 +157,7 @@
 
 .reviewDrop {
     background-color: #2d46b9;
-    width: 300px;
+    width: 100%;
     height: 40px;
     border: 1px solid #495db8;
 
@@ -205,13 +232,15 @@ input {
 
 button {
     /* padding: .75em; */
-    border: 1.5px solid #495db8;
+    border: 1.5px solid #2d46b9;
     border-radius: 10px;
-    background-color: #495db8;
-    color: #0d2a55;
+    background-color: #2d46b9;
+    color: white;
     width: fit-content;
     padding: .5rem;
 }
+
+
 
 
 .editBtn{

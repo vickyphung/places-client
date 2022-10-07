@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 
 const PlaceDetails = (props) => {
-  console.log(props.detailsId);
+  console.log("deatils ID " + props.detailsId);
   const [details, setDetails] = useState([]);
   const [addFromMap, setAddFromMap] = useState({});
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,6 +36,7 @@ const PlaceDetails = (props) => {
         setAddFromMap({
           name: detailResponse.name,
           address: detailResponse.address_components,
+          url: detailResponse.website,
           mapsId: detailResponse.place_id,
         });
       }
@@ -47,6 +48,8 @@ const PlaceDetails = (props) => {
     <Container>
       <div className="mapResults">
         {console.log(details)}
+        {console.log(addFromMap)}
+        
 
       <a href={details.website} className="siteLink">
         <span className="placeName">{details.website}</span>
@@ -107,8 +110,12 @@ const PlaceDetails = (props) => {
             <ModalCloseButton />
 
             <ModalBody>
-              <AddFromMaps postFormData={addFromMap.address}
-              // placeName={addFromMap.name}
+              
+              <AddFromMaps 
+              postFormData={addFromMap.address}
+              placeName={addFromMap.name}
+              url={addFromMap.url}
+
               />
             </ModalBody>
 

@@ -23,7 +23,7 @@ function Tag() {
   return (
     <div>
       <div>
-        <h1>Filter Posts by Tag</h1>
+        <h1>Filter Posts by Category</h1>
       </div>
       <div>
         <form className="searchForm" onSubmit={handleSubmitTag}>

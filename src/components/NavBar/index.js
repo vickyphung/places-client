@@ -9,10 +9,10 @@ function NavBar() {
       <Link className="navLink" to="/user">User</Link> 
 
       <Link className="navLink" to="/places">Places </Link>
-      <Link className="navLink" to="/places/add">Add Place</Link>
-      <Link className="navLink" to="/places/filter">Filter Places</Link>
-      <Link className="navLink" to="/search">Search and Add</Link>
-      <Link className="navLink" to="/reviews">Reviews</Link>
+      <Link className="navLink" to="/places/add">Add </Link>
+      <Link className="navLink" to="/places/filter">Filter</Link>
+      <Link className="navLink" to="/search">Search+/Add </Link>
+      {/* <Link className="navLink" to="/reviews">Reviews</Link> */}
 
     </div>
   );

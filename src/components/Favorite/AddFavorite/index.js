@@ -3,8 +3,7 @@ import axios from "axios";
 
 
 const AddFavorite = (props) => {
-  console.log("Made it to the Add Favorite Component");
-  console.log("placeID " + props.placeId);
+  console.log("+fav pID " + props.placeId);
   const [data, setData] = useState([]);
 
   const fakeUserId = "633f3b441673cfa3030031eb";
@@ -41,7 +40,7 @@ const AddFavorite = (props) => {
           ❤️ 
         </button>
  
-         {console.log(data.message)}
+         {console.log("+fav msg "+data.message)}
         </div>
     );
   }
