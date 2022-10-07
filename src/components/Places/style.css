@@ -1,3 +1,9 @@
+
+.pTitle {
+    color: white;
+    font-size: 2em;
+    margin-left: 1em;
+}
 .loader-container {
     width: 100%;
     height: 100vh;
@@ -5,7 +11,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    background: #c3f0c8;
+    background: #ff5e7f;
     z-index: 1;
 }
 
@@ -28,7 +34,7 @@
 }
 
 .container{
-    background: #c3f0c8;
+    background: #ff5e7f;
 }
 
 .siteNameTwo {
@@ -60,7 +66,6 @@
     border: 5px solid #2d46b9;
     border-radius: 10px;
     background-color: #2d46b9;
-    color: #caf0f8;
     margin: 1em;
     width: 300px;
     /* min-height: 500px; */

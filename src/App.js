@@ -1,51 +1,47 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import { useState } from 'react';
-import Places from './components/Places';
-import './App.css';
-import AddPlace from './components/Places/AddPlace';
-import DeletePlace from './components/Places/DeletePlace';
-import UpdatePlace from './components/Places/UpdatePlace';
-import Filter from './components/Places/Filter';
-import User from './components/User';
-import DeleteUser from './components/User/DeleteUser';
-import UpdateUser from './components/User/UpdateUser';
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import "./App.css";
+import Places from "./components/Places";
+import AddPlace from "./components/Places/AddPlace";
+import DeletePlace from "./components/Places/DeletePlace";
+import UpdatePlace from "./components/Places/UpdatePlace";
+import Filter from "./components/Places/Filter";
+import User from "./components/User";
+import DeleteUser from "./components/User/DeleteUser";
+import UpdateUser from "./components/User/UpdateUser";
 // import UserLogin from './components/Login/UserLogin';
 // import CreateUser from "./components/Login/CreateUser";
-import Login from './components/Login/index';
-import Home from './components/Home';
-import AddReview from './components/Review/AddReview';
-import Review from './components/Review';
-import Nearby from './components/Nearby';
-import DeleteReview from './components/Review/DeleteReview';
-import UpdateReview from './components/Review/UpdateReview';
-import AddFavorite from './components/Favorite/AddFavorite';
-import RemoveFavorite from './components/Favorite/RemoveFavorite';
-
-
-
+import Login from "./components/Login/index";
+import Home from "./components/Home";
+import AddReview from "./components/Review/AddReview";
+import Review from "./components/Review";
+import Nearby from "./components/Nearby";
+import DeleteReview from "./components/Review/DeleteReview";
+import UpdateReview from "./components/Review/UpdateReview";
+import AddFavorite from "./components/Favorite/AddFavorite";
+import RemoveFavorite from "./components/Favorite/RemoveFavorite";
 
 function App(props) {
-
   const navigate = useNavigate();
 
   const [placeId, setPlaceId] = useState([]);
 
   const setDeleteIdAndLink = (id) => {
-    setPlaceId(id)
-    navigate('/places/delete')
-  }
+    setPlaceId(id);
+    navigate("/places/delete");
+  };
   const setPlaceUpdateIdAndLink = (id) => {
-    setPlaceId(id)
-    navigate('/places/update')
-  }
+    setPlaceId(id);
+    navigate("/places/update");
+  };
   const setReviewIdAndLink = (id) => {
-    setPlaceId(id)
-  navigate('/review/add')
-  }
+    setPlaceId(id);
+    navigate("/review/add");
+  };
   const setAddFavoriteIdAndLink = (id) => {
-    setPlaceId(id)
-  // navigate('/favorite/add')
-  }
+    setPlaceId(id);
+    // navigate('/favorite/add')
+  };
 
   const [favoriteId, setFavoriteId] = useState([]);
 
@@ -53,8 +49,6 @@ function App(props) {
     setFavoriteId(id);
     navigate("/favorite/delete");
   };
-
-
 
   // const setRemoveFavoriteIdAndLink = (favorite) => {
   //   setFavoriteId(favorite)
@@ -64,30 +58,28 @@ function App(props) {
   const [reviewId, setReviewId] = useState([]);
 
   const setReviewDeleteIdAndLink = (id) => {
-    setReviewId(id)
-    navigate('/review/delete')
-  }
+    setReviewId(id);
+    navigate("/review/delete");
+  };
   const setUpdateWTF = (review) => {
-    setReviewId(review)
-    navigate('/review/update')
-  }
+    setReviewId(review);
+    navigate("/review/update");
+  };
 
   const [userId, setUserId] = useState([]);
-  
-    const setUserIdAndLink = (id) => {
-      setUserId(id);
-    };
-    const setUserUpdateIdAndLink = (id) => {
-      setUserId(id);
-    };
-    const setUserDeleteIdAndLink = (id) => {
-      setUserId(id);
-    };
 
-    const setUserFavoriteIdAndLink = (id) => {
-      setUserId(id);
-    };
-
+  const setUserIdAndLink = (id) => {
+    setUserId(id);
+  };
+  const setUserUpdateIdAndLink = (id) => {
+    setUserId(id);
+  };
+  const setUserDeleteIdAndLink = (id) => {
+    setUserId(id);
+  };
+  const setUserFavoriteIdAndLink = (id) => {
+    setUserId(id);
+  };
 
   return (
     <div className="App">
@@ -124,7 +116,6 @@ function App(props) {
         />
         <Route path="/places/add" element={<AddPlace userId={userId} />} />
 
-        
         <Route
           path="/places/delete"
           element={<DeletePlace placeId={placeId} userId={userId} />}
@@ -135,12 +126,12 @@ function App(props) {
           element={<UpdatePlace placeId={placeId} userId={userId} />}
         />
 
-        <Route path="/places/update" element={<UpdatePlace placeId={placeId} />} />
-
+        <Route
+          path="/places/update"
+          element={<UpdatePlace placeId={placeId} />}
+        />
 
         <Route path="/places/filter" element={<Filter />} />
-
-
 
         <Route path="/reviews/" element={<Review />} />
         <Route
@@ -178,11 +169,11 @@ function App(props) {
         />
         {/* <Route path="/login" element={<UserLogin />} /> */}
         <Route path="/login" element={<Login />} />
-
         <Route path="/user/delete" element={<DeleteUser userId={userId} />} />
         <Route path="/user/update" element={<UpdateUser userId={userId} />} />
         <Route path="/search" element={<Nearby />} />
       </Routes>
+      
     </div>
   );
 }

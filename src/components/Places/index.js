@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 import AddReview from "../Review/AddReview";
@@ -15,6 +15,7 @@ import {
   Box,
   Container,
 } from "@chakra-ui/react";
+// import Filter from "./Filter";
 
 const Places = (props) => {
   console.log("PINKY!");
@@ -60,19 +61,18 @@ const Places = (props) => {
   return (
     <Container>
       {" "}
-      <div className="home">
+      <div className="p">
         {console.log(places)}
 
         <div className="top">
-        <Link className="homepage" to="/">
-          <div className="siteNameTwo">
-            <span className="bold">places to go </span>
-            in the <span className="bold">DMV</span>
-            <p className="credit">by: vicky@vicky.wtf</p>
-          </div>
-        </Link>
         <NavBar />
         </div>
+
+        <div className="pTitle"><h1>Places</h1></div>
+
+{/* <Filter /> */}
+
+
 
         {loading ? (
           <div className="loader-container">

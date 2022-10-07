@@ -1,25 +1,55 @@
+.navBar{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: flex-start;
+    width: 100vw;
+    text-decoration: none;
+    /* border-bottom: 1px solid #da312a; */
+    background-color: #f8758f;
+    border-radius: .5px;
+    padding: 5px;
+}
+
+.dmv {
+    width: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+
+
+
+}
 .navLinks{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* padding: .5rem; */
-    /* gap:30px; */
     text-decoration: none;
-    /* margin: 1em; */
     /* border-bottom: 1px solid #da312a; */
-
-    background-color: #ecf8ed;
+    background-color: #f8758f;
     border-radius: .5em;
-
 }
 
 .navLink {
     /* border: 1px solid #da312a; */
     /* background-color: #ffc864; */
-    color: #191414;
+    color: #fafafa;
     border-radius: 1.25em;
     padding: .55rem;
     margin: 3px;
-    -webkit-text-stroke-width: .2px;
-    -webkit-text-stroke-color: #191414;
+    font-size: 1.25rem;
+
+}
+
+.dc {
+    height: 40px;
+    padding: 5px;
+}
+
+.md, .va {
+    height: 40px;
+    padding: 5px;
+
 }
