@@ -37,7 +37,7 @@ const AddFavorite = (props) => {
             addFav();
           }}
         >
-          ❤️ 
+          ❤️ like
         </button>
  
          {console.log("+fav msg "+data.message)}

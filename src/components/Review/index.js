@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import NavBar from "../NavBar";
-import { ListItem, UnorderedList } from "@chakra-ui/react";
+// import { ListItem, UnorderedList } from "@chakra-ui/react";
 
 const Review = (props) => {
   const [reviews, setReviews] = useState([]);

@@ -56,7 +56,7 @@ const AddReview = (props) => {
   return (
     <div>
       <button onClick={onOpen} title="leave a review">
-        💬
+        💬 review
       </button>
 
       <Modal isOpen={isOpen} onClose={onClose}>

@@ -46,7 +46,9 @@ function Home(props) {
           </p>
         </div>
       </div>
-
+      <div>
+        <p>pinkybear 2022 ❤ vicky@vicky.wtf</p>
+      </div>
       <div></div>
     </div>
   );
